@@ -1,0 +1,1650 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CKM Multiservices</title>
+<meta name="description" content="CKM Multiservices LLC is a family-owned exterior contractor in Orlando, FL offering gutter, soffit, fascia, vinyl siding and leaf guard installation across Central Florida. Request a free estimate.">
+<link rel="icon" type="image/png" href="brand/ckm-badge-48.png">
+<link rel="apple-touch-icon" href="brand/ckm-badge-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Public+Sans:wght@400;500;600;700&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "name": "CKM Multiservices LLC",
+  "foundingDate": "2019",
+  "description": "Family-owned company providing gutter, soffit, fascia, vinyl siding and leaf guard installation in Central Florida.",
+  "telephone": "+1-321-240-0711",
+  "email": "ckmmultiservicess@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "6735 Conroy Windermere Rd, Suite 233",
+    "addressLocality": "Orlando",
+    "addressRegion": "FL",
+    "postalCode": "32835",
+    "addressCountry": "US"
+  },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens": "09:00",
+    "closes": "17:00"
+  }],
+  "areaServed": ["Orlando, FL","Saint Petersburg, FL","Clermont, FL","Tampa, FL","Sarasota, FL","Port Charlotte, FL","Venice, FL","Placida, FL"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Exterior Services",
+    "itemListElement": [
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Gutter Installation"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Soffit Installation"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Fascia Installation"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Vinyl Siding Installation"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Leaf Guard Installation"}}
+    ]
+  }
+}
+</script>
+<style>
+/* Layout concept: a roofline cross-section is the brand's recurring drawing; the same eave diagram
+   explains all five services, highlighting one part at a time. Palette and type follow the round CKM badge:
+   navy for structure and labels, logo green for actions and accents, geometric wide headings. */
+:root{
+  --paper:#f4f6f9; --surface:#ffffff; --ink:#0a2140; --ink-2:#4b586b; --line:#d8dee7;
+  --copper:#3d8a1f; --copper-hover:#33751a; --on-copper:#ffffff; --copper-soft:#e8f3e0;
+  --blue:#0a2140; --on-blue:#ffffff; --blue-soft:#e6ebf3;
+  --logo-green:#5ca730; --logo-blue:#0a2140;
+  --band:#0a2140; --band-2:#12305a; --band-fg:#f1f5fb; --band-muted:#a8b6cc; --band-line:#213e66; --band-accent:#6cbd3d;
+  --ok:#3d8a1f; --err:#b3261e;
+  --display:"Montserrat","Arial Black",Arial,sans-serif;
+  --body:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --brand:"Montserrat","Arial Black",Arial,sans-serif;
+  --wrap:1200px; --gut:clamp(16px,4vw,40px); --radius:6px;
+  --shadow:0 1px 2px rgba(16,33,58,.06),0 8px 24px rgba(16,33,58,.08);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#08111e; --surface:#0f1c2e; --ink:#e9eef5; --ink-2:#a4b1c3; --line:#213248;
+  --copper:#5fb33a; --copper-hover:#74c650; --on-copper:#06200a; --copper-soft:#15301a;
+  --blue:#b7c7e0; --on-blue:#071528; --blue-soft:#16263f;
+  --logo-green:#6cbd3d; --logo-blue:#e9eef5;
+  --band:#050d18; --band-2:#0c1a2e; --band-fg:#f1f5fb; --band-muted:#9aaac2; --band-line:#1a2c45; --band-accent:#6cbd3d;
+  --ok:#6cc24a; --err:#f08a80; --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#08111e; --surface:#0f1c2e; --ink:#e9eef5; --ink-2:#a4b1c3; --line:#213248;
+  --copper:#5fb33a; --copper-hover:#74c650; --on-copper:#06200a; --copper-soft:#15301a;
+  --blue:#b7c7e0; --on-blue:#071528; --blue-soft:#16263f;
+  --logo-green:#6cbd3d; --logo-blue:#e9eef5;
+  --band:#050d18; --band-2:#0c1a2e; --band-fg:#f1f5fb; --band-muted:#9aaac2; --band-line:#1a2c45; --band-accent:#6cbd3d;
+  --ok:#6cc24a; --err:#f08a80; --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35); color-scheme:dark}
+
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--copper);outline-offset:3px;border-radius:2px}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gut)}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.02;letter-spacing:.005em;text-wrap:balance;margin:0;text-transform:uppercase}
+h2{font-size:clamp(2.2rem,4.6vw,3.4rem)}
+h3{font-size:1.75rem}
+p{margin:0}
+.eyebrow{font:600 .8rem/1 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--blue);display:flex;align-items:center;gap:.6rem}
+.eyebrow::before{content:"";width:28px;height:2px;background:currentColor}
+.lede{color:var(--ink-2);font-size:1.075rem;max-width:62ch}
+section{padding-block:clamp(64px,9vw,112px)}
+.sec-head{display:grid;gap:1rem;margin-bottom:clamp(36px,5vw,56px)}
+.sec-head.split{grid-template-columns:1fr;align-items:end}
+@media (min-width:900px){.sec-head.split{grid-template-columns:1.1fr 1fr;gap:3rem}}
+
+/* Buttons */
+.btn{white-space:nowrap;display:inline-flex;align-items:center;justify-content:center;gap:.55rem;min-height:48px;padding:.8rem 1.35rem;border-radius:var(--radius);border:2px solid transparent;font:700 .95rem/1 var(--body);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .2s,color .2s,border-color .2s,transform .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--copper);color:var(--on-copper)}
+.btn-primary:hover{background:var(--copper-hover)}
+.btn-ghost{border-color:currentColor;background:transparent}
+.btn-ghost:hover{background:color-mix(in srgb,currentColor 10%,transparent)}
+.btn-text{padding-inline:.2rem;min-height:44px;background:none;border:0;color:var(--ink);border-bottom:2px solid var(--line);border-radius:0}
+.btn-text:hover{border-color:var(--copper);transform:none}
+.btn svg{width:18px;height:18px;flex:none}
+
+/* Header */
+.site-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--surface);border-bottom:1px solid var(--line);transition:box-shadow .2s}
+.site-header.scrolled{box-shadow:var(--shadow)}
+.hdr{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:72px}
+html,body{overflow-x:clip}
+.hdr-actions .hdr-cta{padding-inline:1.1rem}
+.logo{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+.logo-mark{width:46px;height:46px;flex:none}
+.logo-text{display:flex;align-items:baseline;gap:.32em;font:900 1.4rem/1 var(--brand);letter-spacing:-.01em;white-space:nowrap}
+.logo-text b{color:var(--logo-green);font-weight:900}
+.logo-text span{color:var(--logo-blue)}
+@media (max-width:440px){.logo-text{font-size:1.08rem}.logo-mark{width:38px;height:38px}.lang button{min-width:34px;padding:0 .3rem}}
+.nav{display:none;gap:1.4rem;align-items:center;white-space:nowrap}
+.nav a{text-decoration:none;font-weight:600;font-size:.93rem;color:var(--ink-2);padding-block:.4rem;border-bottom:2px solid transparent}
+.nav a:hover{color:var(--ink);border-color:var(--copper)}
+.hdr-actions{display:flex;align-items:center;gap:.9rem}
+.hdr-phone{display:none;text-decoration:none;font-weight:700;font-size:.95rem;white-space:nowrap}
+.hdr-phone small{display:block;font-weight:500;font-size:.72rem;color:var(--ink-2);letter-spacing:.05em;text-transform:uppercase}
+.hdr .btn-primary{display:none}
+.lang{display:flex;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;flex:none}
+.lang button{min-width:40px;min-height:40px;padding:0 .5rem;border:0;background:var(--surface);color:var(--ink-2);font:700 .75rem/1 var(--body);letter-spacing:.08em;cursor:pointer}
+.lang button + button{border-left:1px solid var(--line)}
+.lang button:hover{color:var(--ink)}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+@media (max-width:370px){.logo-text span{display:none}}
+.menu-btn{width:48px;height:48px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);color:var(--ink);display:grid;place-items:center;cursor:pointer}
+.menu-btn svg{width:22px;height:22px}
+.mobile-nav{border-top:1px solid var(--line);background:var(--surface)}
+.mobile-nav ul{list-style:none;margin:0;padding:.5rem 0 1.25rem;display:grid}
+.mobile-nav a{display:block;padding:.9rem 0;text-decoration:none;font:600 1.4rem/1 var(--display);text-transform:uppercase;letter-spacing:.03em;border-bottom:1px solid var(--line)}
+.mobile-nav .btn{margin-top:1rem;width:100%}
+@media (min-width:1180px){.nav{display:flex}.menu-btn{display:none}.hdr .btn-primary{display:inline-flex}.mobile-nav{display:none!important}}
+@media (min-width:1520px){.hdr-phone{display:block}}
+@media (min-width:1180px) and (max-width:1360px){.nav{gap:1rem}.nav a{font-size:.88rem}.logo-text{font-size:1.25rem}.hdr-actions{gap:.6rem}}
+@media (min-width:600px) and (max-width:1179px){.hdr .btn-primary{display:inline-flex}}
+
+/* Hero */
+.hero{background:var(--band);color:var(--band-fg);padding-block:0;position:relative;overflow:hidden}
+.hero-grid{display:grid;gap:2.5rem;padding-block:clamp(48px,7vw,88px)}
+.hero h1{font-size:clamp(2.7rem,5.4vw,4.6rem);line-height:.96;max-width:12ch}
+.hero h1 em{font-style:normal;color:var(--band-accent)}
+.hero .eyebrow,.areas .eyebrow{color:var(--band-accent)}
+.hero .lede{color:var(--band-muted);font-size:clamp(1.05rem,1.6vw,1.2rem);margin-top:1.4rem}
+.hero .eyebrow{margin-bottom:1.3rem}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+.hero-ctas .btn-ghost{color:var(--band-fg)}
+.hero-call{margin-top:1.6rem;display:flex;align-items:center;gap:.8rem;color:var(--band-muted);font-size:.95rem}
+.hero-call a{color:var(--band-fg);font-weight:700;text-decoration:none;font-size:1.1rem}
+.hero-art{position:relative;align-self:end;min-width:0}
+.hero-art svg{display:block;width:100%;height:auto}
+.hero-art figcaption{position:absolute;right:0;top:0;font:600 .7rem/1.3 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--band-muted);text-align:right}
+.hero-photo{margin:0;position:relative;min-width:0;border-radius:8px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.35);max-width:100%}
+.hero-photo img{display:block;width:100%;height:auto;aspect-ratio:16/11;object-fit:cover;object-position:38% 60%}
+.hero-photo figcaption{position:absolute;left:14px;bottom:14px;background:rgba(6,14,28,.78);color:#eef3fb;font:600 .72rem/1 var(--body);letter-spacing:.12em;text-transform:uppercase;padding:.55rem .7rem;border-radius:4px;border-left:3px solid var(--band-accent)}
+.hero-illus img{aspect-ratio:4/3;object-position:center}
+@media (min-width:980px){.hero-grid{grid-template-columns:1fr 1.15fr;align-items:center;gap:4rem}.hero-photo img{aspect-ratio:3/2}}
+.h-line{stroke:var(--band-fg);stroke-width:2;fill:none}
+.h-soft{stroke:var(--band-line);stroke-width:1.5;fill:none}
+.h-fill{fill:var(--band-2)}
+.h-copper{fill:var(--band-accent)}
+.h-copper-s{stroke:var(--band-accent);stroke-width:3;fill:none}
+.h-glass{fill:var(--band);stroke:var(--band-fg);stroke-width:2}
+
+/* Trust bar */
+.trust{background:var(--surface);border-bottom:1px solid var(--line);padding-block:0}
+.trust ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr}
+.trust li{display:flex;gap:.85rem;align-items:center;padding:1.4rem .5rem;border-bottom:1px solid var(--line);min-width:0}
+.trust li:nth-child(odd){border-right:1px solid var(--line);padding-left:0}
+.trust li:nth-child(even){padding-left:1rem}
+.trust svg{width:30px;height:30px;flex:none;color:var(--blue)}
+.trust b{display:block;font:700 1.15rem/1.1 var(--display);text-transform:uppercase;letter-spacing:.03em}
+.trust span{display:block;font-size:.85rem;color:var(--ink-2);line-height:1.35}
+@media (min-width:900px){.trust ul{grid-template-columns:repeat(4,1fr)}.trust li{border-bottom:0;border-right:1px solid var(--line);padding:1.6rem 1.4rem!important}.trust li:first-child{padding-left:0!important}.trust li:last-child{border-right:0}}
+@media (max-width:420px){.trust ul{grid-template-columns:1fr}.trust li{border-right:0!important;padding-left:0!important}}
+
+/* Video */
+.video-sec{background:var(--surface);border-bottom:1px solid var(--line)}
+.video-grid{display:grid;gap:2rem;align-items:center}
+.video-copy{display:grid;gap:1rem;justify-items:start}
+.video-frame{margin:0;position:relative;min-width:0;max-width:100%}
+.video-frame video{display:block;width:100%;aspect-ratio:16/9;background:var(--band);border-radius:var(--radius);box-shadow:var(--shadow);object-fit:cover}
+.video-empty{position:absolute;inset:0;display:grid;place-content:center;justify-items:center;gap:.4rem;text-align:center;padding:1rem;border-radius:var(--radius);background:color-mix(in srgb,var(--band) 82%,transparent);color:var(--band-fg)}
+.video-empty svg{width:36px;height:36px;color:var(--band-accent)}
+.video-empty b{font:700 1.35rem/1.1 var(--display);text-transform:uppercase;letter-spacing:.03em}
+.video-empty span{color:var(--band-muted);font-size:.9rem;max-width:34ch}
+.video-note{margin-top:.7rem;font-size:.88rem;color:var(--ink-2)}
+@media (min-width:960px){.video-grid{grid-template-columns:.85fr 1.15fr;gap:4rem}}
+
+/* Anatomy diagram (shared) */
+.ana .a-roof{fill:var(--line)}
+.ana .a-shingle{fill:var(--ink-2);opacity:.55}
+.ana .a-wall{fill:var(--surface)}
+.ana .a-sid{stroke:var(--line);stroke-width:1.5}
+.ana .a-sidbg{fill:var(--surface);stroke:var(--line)}
+.ana .part{fill:color-mix(in srgb,var(--ink-2) 35%,var(--surface));stroke:var(--ink);stroke-width:1.5;transition:fill .3s}
+.ana .guard{stroke:var(--ink);stroke-width:2;fill:none;stroke-dasharray:5 3}
+.ana .leaf{fill:var(--ink-2);opacity:.6}
+.ana .lbl{font:700 15px var(--display);letter-spacing:.06em;text-transform:uppercase;fill:var(--ink)}
+.ana .lbl-s{font:500 11px var(--body);fill:var(--ink-2)}
+.ana .lead{stroke:var(--ink-2);stroke-width:1;fill:none}
+.ana .dot{fill:var(--ink)}
+.ana [data-p].on .part,.ana .part.on{fill:var(--copper)}
+.ana g.hl .lbl{fill:var(--copper)}
+.ana g.hl .guard{stroke:var(--copper);stroke-width:3;stroke-dasharray:none}
+.ana g.hl .a-sidbg{fill:var(--copper-soft);stroke:var(--copper)}
+.ana g.hl .a-sid{stroke:var(--copper);opacity:.55}
+.ana g.hl .dot{fill:var(--copper)}
+.ana g.dim{opacity:.35}
+
+/* Services */
+.services{background:var(--paper)}
+.overview{display:grid;gap:2rem;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(20px,3vw,40px);margin-bottom:clamp(48px,7vw,80px)}
+.overview-copy{display:grid;gap:1rem;align-content:center}
+.overview-copy h3{font-size:clamp(1.7rem,3vw,2.3rem)}
+.overview-copy p{color:var(--ink-2)}
+.svc-tabs{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem}
+.svc-tabs button{font:600 .82rem/1 var(--body);letter-spacing:.04em;padding:.65rem .9rem;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer;min-height:40px}
+.svc-tabs button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.overview-fig{min-width:0;overflow-x:auto}
+.overview-fig svg{display:block;width:100%;min-width:320px;height:auto}
+@media (min-width:980px){.overview{grid-template-columns:.8fr 1.2fr;gap:3rem}}
+
+.svc-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-bottom:clamp(40px,6vw,64px)}
+.svc-cards a:last-child{grid-column:span 2}
+@media (min-width:720px){.svc-cards{grid-template-columns:repeat(3,minmax(0,1fr))}.svc-cards a:last-child{grid-column:auto}}
+@media (min-width:1100px){.svc-cards{grid-template-columns:repeat(5,minmax(0,1fr))}}
+.svc-card{display:grid;text-decoration:none;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform .25s,box-shadow .25s,border-color .25s;min-width:0}
+.svc-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--copper)}
+.svc-card img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.svc-card .sc-body{padding:1rem 1rem 1.1rem;display:grid;gap:.35rem}
+.svc-card b{font:700 1.3rem/1.05 var(--display);text-transform:uppercase;letter-spacing:.01em}
+.svc-card small{font-size:.82rem;color:var(--ink-2)}
+.svc-card .go{font:700 .75rem/1 var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--copper);margin-top:.35rem;display:flex;align-items:center;gap:.35rem}
+.svc-card .go svg{width:14px;height:14px}
+.svc-list{display:grid;gap:clamp(56px,8vw,96px)}
+.svc{display:grid;gap:2rem;align-items:center;scroll-margin-top:96px}
+.svc-media{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;max-width:100%}
+.svc-media > svg{position:absolute;inset:0;width:100%;height:100%}
+.svc-media > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.svc-inset{position:absolute;right:12px;bottom:12px;width:40%;max-width:220px;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:4px;box-shadow:var(--shadow)}
+.svc-inset svg{display:block;width:100%;height:auto}
+.svc-num{position:absolute;left:14px;top:14px;font:700 2.2rem/1 var(--display);color:var(--blue);background:var(--surface);padding:.4rem .6rem;border-radius:4px;box-shadow:var(--shadow)}
+.photo-tag{position:absolute;right:12px;bottom:12px;font:600 .66rem/1 var(--body);letter-spacing:.1em;text-transform:uppercase;background:var(--paper);color:var(--ink-2);border:1px dashed var(--ink-2);padding:.45rem .6rem;border-radius:4px}
+.svc-body{display:grid;gap:1.1rem;min-width:0}
+.svc-body h3{font-size:clamp(2rem,3.8vw,2.8rem)}
+.svc-body > p{color:var(--ink-2);max-width:58ch}
+.benefits{list-style:none;margin:.3rem 0 0;padding:0;display:grid;gap:.6rem}
+.benefits li{display:grid;grid-template-columns:22px 1fr;gap:.7rem;align-items:start}
+.benefits svg{width:22px;height:22px;color:var(--copper);margin-top:2px}
+.svc-ctas{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;margin-top:.6rem}
+.svc-more{border-left:3px solid var(--copper);padding:.2rem 0 .2rem 1rem;color:var(--ink-2);max-width:58ch}
+@media (min-width:900px){.svc{grid-template-columns:1fr 1fr;gap:4.5rem}.svc:nth-child(even) .svc-media{order:2}}
+
+/* Why */
+.why{background:var(--surface);border-block:1px solid var(--line)}
+.why-grid{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.why-card{background:var(--surface);padding:2rem 1.6rem;display:grid;gap:.8rem;align-content:start;transition:background .2s}
+.why-card:hover{background:var(--paper)}
+.why-card svg{width:40px;height:40px;color:var(--blue)}
+.why-card h3{font-size:1.6rem}
+.why-card p{color:var(--ink-2);font-size:.97rem}
+@media (min-width:640px){.why-grid{grid-template-columns:1fr 1fr}}
+@media (min-width:1024px){.why-grid{grid-template-columns:repeat(4,1fr)}}
+
+/* About */
+.about-grid{display:grid;gap:2.5rem}
+.about-copy{display:grid;gap:1.2rem;align-content:start}
+.about-copy p{color:var(--ink-2);max-width:62ch}
+.about-copy p.big{font-size:clamp(1.2rem,2vw,1.45rem);line-height:1.45;color:var(--ink);font-weight:500}
+.about-side{margin:0;border-radius:var(--radius);overflow:hidden;min-width:0;max-width:100%}
+.about-side img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+@media (min-width:960px){.about-side img{aspect-ratio:4/5;max-height:560px}}
+.values{display:flex;flex-wrap:wrap;gap:.5rem}
+.values span{font:700 1.05rem/1 var(--display);letter-spacing:.08em;text-transform:uppercase;padding:.6rem .9rem;border:1.5px solid var(--copper);color:var(--copper);border-radius:4px}
+.people{display:grid;gap:0;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+.person{display:grid;grid-template-columns:52px 1fr;gap:1rem;align-items:center;padding:1.2rem 1.3rem}
+.person + .person{border-top:1px solid var(--line)}
+.initials{width:52px;height:52px;border-radius:50%;background:var(--blue);color:var(--on-blue);display:grid;place-items:center;font:700 1.25rem/1 var(--display);letter-spacing:.04em}
+.person b{display:block;font-weight:700}
+.person span{color:var(--ink-2);font-size:.9rem}
+.about-photo{position:relative;aspect-ratio:16/10;border-radius:var(--radius);border:1px dashed var(--ink-2);background:repeating-linear-gradient(135deg,var(--surface) 0 14px,var(--paper) 14px 28px);display:grid;place-items:center;text-align:center;color:var(--ink-2);font-size:.85rem;padding:1rem;max-width:100%}
+@media (min-width:960px){.about-grid{grid-template-columns:1.15fr 1fr;gap:4rem}}
+
+/* Areas */
+.areas{background:var(--band);color:var(--band-fg)}
+.areas .lede{color:var(--band-muted)}
+.area-grid{display:grid;gap:1rem}
+.region{border:1px solid var(--band-line);border-radius:var(--radius);padding:1.5rem;background:var(--band-2);display:grid;gap:1rem;align-content:start}
+.region h3{font:600 .78rem/1 var(--body);letter-spacing:.16em;color:var(--band-muted)}
+.region ul{list-style:none;margin:0;padding:0;display:grid;gap:.1rem}
+.region li{display:flex;align-items:center;justify-content:space-between;gap:.8rem;font:700 clamp(1.6rem,2.6vw,2rem)/1.25 var(--display);text-transform:uppercase;letter-spacing:.02em;padding-block:.35rem;border-bottom:1px solid var(--band-line)}
+.region li:last-child{border-bottom:0}
+.region li small{font:500 .78rem/1 var(--body);letter-spacing:.08em;color:var(--band-muted)}
+.area-cta{margin-top:2rem;display:grid;gap:1.4rem;padding:clamp(22px,3vw,36px);border:1px solid var(--band-accent);border-radius:var(--radius);align-items:center}
+.area-cta p{font-size:1.15rem;max-width:52ch}
+.area-cta .btns{display:flex;flex-wrap:wrap;gap:.8rem}
+.area-cta .btn-ghost{color:var(--band-fg)}
+.area-note{margin-top:1.4rem;color:var(--band-muted)}
+.area-note b{color:var(--band-fg)}
+.area-note a{color:var(--band-fg);font-weight:600}
+@media (min-width:760px){.area-grid{grid-template-columns:repeat(3,1fr)}}
+@media (min-width:900px){.area-cta{grid-template-columns:1fr auto}}
+
+/* Gallery */
+.filters{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.6rem}
+.filters button{font:600 .85rem/1 var(--body);padding:.7rem 1rem;min-height:42px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.masonry{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;grid-auto-flow:dense}
+@media (min-width:720px){.masonry{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (min-width:1024px){.masonry{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}}
+.tile{position:relative;aspect-ratio:3/4;display:block;width:100%;min-width:0;padding:0;border:0;background:none;cursor:zoom-in;text-align:left;color:inherit;font:inherit}
+.ph{position:relative;border:1px dashed var(--ink-2);border-radius:var(--radius);background:repeating-linear-gradient(135deg,var(--surface) 0 14px,var(--paper) 14px 28px);display:grid;place-items:center;padding:1rem;text-align:center;overflow:hidden;transition:border-color .2s}
+.tile:hover .ph{border-color:var(--copper)}
+.tile.wide{grid-column:span 2;aspect-ratio:auto}
+.tile .ph{height:100%}
+.shot{position:absolute;inset:0;display:block;border-radius:var(--radius);overflow:hidden;background:var(--line)}
+.shot img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.tile:hover .shot img{transform:scale(1.04)}
+.shot .cat{position:absolute;left:10px;top:10px;font:600 .66rem/1 var(--body);letter-spacing:.12em;text-transform:uppercase;background:var(--blue);color:var(--on-blue);padding:.4rem .55rem;border-radius:3px}
+.ph .ph-in{display:grid;gap:.4rem;justify-items:center}
+.ph svg{width:34px;height:34px;color:var(--ink-2)}
+.ph b{font:700 1.2rem/1.1 var(--display);text-transform:uppercase;letter-spacing:.04em}
+.ph span{font-size:.78rem;color:var(--ink-2)}
+.ph .cat{position:absolute;left:10px;top:10px;font:600 .66rem/1 var(--body);letter-spacing:.12em;text-transform:uppercase;background:var(--blue);color:var(--on-blue);padding:.4rem .55rem;border-radius:3px}
+.gallery-note{margin-top:1rem;font-size:.88rem;color:var(--ink-2)}
+
+.lightbox{position:fixed;inset:0;z-index:100;background:rgba(8,14,17,.88);display:grid;place-items:center;padding:calc(20px + env(safe-area-inset-top,0px)) 16px calc(20px + env(safe-area-inset-bottom,0px))}
+.lb-inner{width:min(960px,100%);display:grid;gap:.8rem}
+.lb-stage{height:min(74vh,720px);width:100%}
+.lb-stage .ph{height:100%;background:repeating-linear-gradient(135deg,#1c2b31 0 16px,#16242a 16px 32px);border-color:#6f8288;color:#dfe7e5}
+.lb-stage .ph span,.lb-stage .ph svg{color:#a9b9bd}
+.lb-bar{display:flex;justify-content:space-between;align-items:center;gap:1rem;color:#eef3f1}
+.lb-bar p{font-size:.95rem}
+.lb-btns{display:flex;gap:.5rem}
+.lb-btns button{width:46px;height:46px;border-radius:50%;border:1px solid #5b6e74;background:transparent;color:#eef3f1;cursor:pointer;display:grid;place-items:center}
+.lb-btns button:hover{border-color:#74c655;color:#74c655}
+.lb-btns svg{width:20px;height:20px}
+
+/* Process */
+.process{background:var(--surface);border-top:1px solid var(--line)}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:1px;background:var(--line);border-block:1px solid var(--line)}
+.step{background:var(--surface);padding:1.8rem 1.4rem 2rem 0;display:grid;gap:.7rem;align-content:start}
+.step .n{font:700 3.2rem/1 var(--display);color:var(--blue)}
+.step h3{font-size:1.5rem}
+.step p{color:var(--ink-2);font-size:.97rem}
+@media (min-width:720px){.steps{grid-template-columns:1fr 1fr}.step{padding:1.8rem 1.6rem 2rem}}
+@media (min-width:1024px){.steps{grid-template-columns:repeat(4,1fr)}}
+
+/* Estimate */
+.estimate{background:var(--paper)}
+.est-grid{display:grid;gap:2.5rem}
+.est-aside{display:grid;gap:1.4rem;align-content:start}
+.est-aside .lede{margin-top:.4rem}
+.contact-card{background:var(--band);color:var(--band-fg);border-radius:var(--radius);padding:1.6rem;display:grid;gap:1.1rem}
+.cc-row{display:grid;grid-template-columns:22px 1fr;gap:.8rem;align-items:start}
+.cc-row svg{width:22px;height:22px;color:var(--band-accent);margin-top:3px}
+.cc-row small{display:block;font:600 .7rem/1.3 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--band-muted)}
+.cc-row a,.cc-row span{color:var(--band-fg);font-weight:600;text-decoration:none;word-break:break-word}
+.cc-row a:hover{color:var(--band-accent)}
+.copy-btn{margin-left:.5rem;font:600 .7rem/1 var(--body);letter-spacing:.08em;text-transform:uppercase;background:transparent;color:var(--band-muted);border:1px solid var(--band-line);border-radius:3px;padding:.3rem .45rem;cursor:pointer;vertical-align:middle}
+.copy-btn:hover{color:var(--band-fg);border-color:var(--band-muted)}
+
+.form-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:clamp(20px,3.2vw,40px);min-width:0}
+.form-card h3{font-size:clamp(1.8rem,3vw,2.3rem)}
+.form-card .sub{color:var(--ink-2);margin-top:.4rem}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+legend{font:700 .78rem/1 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2);padding:0;margin-bottom:1rem}
+.fs{padding-top:1.6rem;margin-top:1.6rem;border-top:1px solid var(--line)}
+.row{display:grid;gap:1rem}
+.row + .row{margin-top:1rem}
+@media (min-width:600px){.row.two{grid-template-columns:1fr 1fr}.row.three{grid-template-columns:1.4fr .7fr 1fr}}
+.field{display:grid;gap:.4rem;min-width:0}
+label,.lbl-like{font-weight:600;font-size:.92rem}
+.req{color:var(--copper)}
+.opt{font-weight:400;color:var(--ink-2);font-size:.85rem}
+input[type=text],input[type=email],input[type=tel],input[type=date],select,textarea{width:100%;min-height:52px;padding:.8rem .9rem;font:16px/1.4 var(--body);color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:var(--radius);transition:border-color .15s,background .15s;appearance:none;-webkit-appearance:none}
+select{background-image:linear-gradient(45deg,transparent 50%,var(--ink-2) 50%),linear-gradient(135deg,var(--ink-2) 50%,transparent 50%);background-position:calc(100% - 20px) 50%,calc(100% - 14px) 50%;background-size:6px 6px;background-repeat:no-repeat;padding-right:2.4rem}
+textarea{min-height:130px;resize:vertical}
+input:hover,select:hover,textarea:hover{border-color:var(--ink-2)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--copper);background:var(--surface);box-shadow:0 0 0 3px color-mix(in srgb,var(--copper) 22%,transparent)}
+.field.invalid input,.field.invalid select,.field.invalid textarea{border-color:var(--err)}
+.err-msg{color:var(--err);font-size:.84rem;font-weight:500}
+.chips{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+@media (min-width:600px){.chips{grid-template-columns:repeat(3,1fr)}}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;inset:0;width:100%;height:100%;margin:0;cursor:pointer}
+.chip span{display:flex;align-items:center;gap:.6rem;min-height:52px;padding:.7rem .85rem;border:1.5px solid var(--line);border-radius:var(--radius);background:var(--paper);font-weight:600;font-size:.93rem;transition:all .15s}
+.chip span::before{content:"";width:18px;height:18px;border:2px solid var(--ink-2);border-radius:4px;flex:none;background:var(--surface) no-repeat center/12px}
+.chip input:checked + span{border-color:var(--copper);background:var(--copper-soft)}
+.chip input:checked + span::before{background-color:var(--copper);border-color:var(--copper);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6.2 4.8 9 10 3' stroke='white' stroke-width='2' fill='none'/%3E%3C/svg%3E")}
+.chip input:focus-visible + span{outline:3px solid var(--copper);outline-offset:2px}
+.drop{display:grid;place-items:center;gap:.4rem;text-align:center;padding:1.4rem;border:1.5px dashed var(--ink-2);border-radius:var(--radius);background:var(--paper);cursor:pointer;position:relative;transition:border-color .15s,background .15s}
+.drop:hover,.drop.over{border-color:var(--copper);background:var(--copper-soft)}
+.drop input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%}
+.drop svg{width:30px;height:30px;color:var(--copper)}
+.drop b{font-size:.95rem}
+.drop small{color:var(--ink-2);font-size:.82rem}
+.thumbs{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.6rem}
+.thumbs figure{margin:0;position:relative;width:72px;height:72px;border-radius:4px;overflow:hidden;border:1px solid var(--line)}
+.thumbs img{width:100%;height:100%;object-fit:cover}
+.thumbs button{position:absolute;top:2px;right:2px;width:22px;height:22px;border-radius:50%;border:0;background:rgba(0,0,0,.65);color:#fff;font-size:13px;line-height:1;cursor:pointer}
+.submit-row{margin-top:1.8rem;display:grid;gap:.9rem}
+.submit-row .btn{width:100%;min-height:56px;font-size:1rem}
+.submit-row p{color:var(--ink-2);font-size:.92rem;text-align:center}
+.success{display:grid;gap:1rem;text-align:left}
+.success .tick{width:56px;height:56px;border-radius:50%;background:var(--copper-soft);color:var(--copper);display:grid;place-items:center}
+.success .tick svg{width:28px;height:28px}
+.success dl{display:grid;grid-template-columns:auto 1fr;gap:.35rem 1rem;margin:0;padding:1rem;background:var(--paper);border-radius:var(--radius);font-size:.92rem}
+.success dt{color:var(--ink-2)}
+.success dd{margin:0;font-weight:600;min-width:0;word-break:break-word}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.form-error{margin-top:1.4rem;padding:.9rem 1rem;border-radius:var(--radius);border:1px solid var(--err);color:var(--err);background:color-mix(in srgb,var(--err) 8%,var(--surface));font-weight:600;font-size:.93rem}
+.form-error a{color:inherit}
+.submit-row .btn[disabled]{opacity:.7;cursor:progress;transform:none}
+.dev-note{font-size:.8rem;color:var(--ink-2);border:1px dashed var(--line);padding:.6rem .8rem;border-radius:4px}
+@media (min-width:1000px){.est-grid{grid-template-columns:.8fr 1.2fr;gap:4rem}.est-aside{position:sticky;top:104px}}
+
+/* CTA band */
+.cta-band{background:var(--copper);color:var(--on-copper);padding-block:clamp(48px,6vw,72px)}
+.cta-band .wrap{display:grid;gap:1.5rem;align-items:center}
+.cta-band h2{font-size:clamp(2rem,4.2vw,3.1rem)}
+.cta-band p{opacity:.9;margin-top:.5rem;max-width:56ch}
+.cta-band .btns{display:flex;flex-wrap:wrap;gap:.8rem}
+.btn-dark{background:var(--band);color:var(--band-fg)}
+.btn-dark:hover{background:var(--band-2)}
+.cta-band .btn-ghost{color:var(--on-copper)}
+@media (min-width:900px){.cta-band .wrap{grid-template-columns:1fr auto}}
+
+/* Contact */
+.contact-grid{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.c-cell{background:var(--surface);padding:1.6rem;display:grid;gap:.5rem;align-content:start;min-width:0}
+.c-cell svg{width:28px;height:28px;color:var(--blue)}
+.c-cell h3{font-size:1.35rem}
+.c-cell a,.c-cell address{font-style:normal;font-weight:600;text-decoration:none;word-break:break-word}
+.c-cell a:hover{color:var(--copper)}
+.c-cell p{color:var(--ink-2);font-size:.92rem}
+@media (min-width:640px){.contact-grid{grid-template-columns:1fr 1fr}}
+@media (min-width:1024px){.contact-grid{grid-template-columns:repeat(4,1fr)}}
+
+/* Footer */
+.site-footer{background:var(--band);color:var(--band-muted);padding-block:64px calc(96px + env(safe-area-inset-bottom,0px))}
+.ft-grid{display:grid;gap:2.5rem}
+.site-footer h4{font:600 .75rem/1 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--band-fg);margin:0 0 1rem}
+.site-footer ul{list-style:none;margin:0;padding:0;display:grid;gap:.55rem}
+.site-footer a{color:var(--band-muted);text-decoration:none}
+.site-footer a:hover{color:var(--band-fg)}
+.ft-logo img{display:block;width:120px;height:120px}
+.ft-about p{margin-top:1rem;max-width:40ch}
+.ft-bottom{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--band-line);display:flex;flex-wrap:wrap;gap:.6rem 2rem;justify-content:space-between;font-size:.85rem}
+@media (min-width:760px){.ft-grid{grid-template-columns:1.4fr 1fr 1fr 1.2fr}.site-footer{padding-bottom:40px}}
+
+/* Floating mobile actions */
+.float-bar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:grid;grid-template-columns:1fr 1fr 1.4fr;gap:1px;background:var(--line);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+.float-bar a{display:flex;align-items:center;justify-content:center;gap:.45rem;min-height:58px;background:var(--surface);color:var(--ink);text-decoration:none;font:700 .8rem/1 var(--body);letter-spacing:.06em;text-transform:uppercase}
+.float-bar a.go{background:var(--copper);color:var(--on-copper)}
+.float-bar svg{width:20px;height:20px}
+@media (min-width:760px){.float-bar{display:none}}
+
+/* Motion */
+@keyframes rise{from{transform:translateY(14px)}to{transform:none}}
+@keyframes heroIn{from{transform:translateY(18px);opacity:.2}to{transform:none;opacity:1}}
+.hero-copy > *{animation:heroIn .7s cubic-bezier(.2,.7,.2,1) both}
+.hero-copy > *:nth-child(2){animation-delay:.06s}.hero-copy > *:nth-child(3){animation-delay:.12s}.hero-copy > *:nth-child(4){animation-delay:.18s}.hero-copy > *:nth-child(5){animation-delay:.24s}
+.hero-art .gutter-draw{stroke-dasharray:760;stroke-dashoffset:0;animation:draw 1.6s .3s ease-out both}
+@keyframes draw{from{stroke-dashoffset:760}to{stroke-dashoffset:0}}
+.reveal.in{animation:rise .6s cubic-bezier(.2,.7,.2,1) both}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:-999px;top:0;background:var(--copper);color:var(--on-copper);padding:.8rem 1rem;z-index:200}
+.skip:focus{left:16px;top:16px}
+
+/* ---- Brand pass: round CKM badge ---- */
+h1,h2,h3{font-weight:800;line-height:1.08;letter-spacing:-.005em}
+h2{font-size:clamp(1.8rem,3.4vw,2.6rem)}
+h3{font-size:1.3rem}
+.eyebrow{font:700 .74rem/1.45 var(--display);letter-spacing:.22em;color:var(--blue)}
+.eyebrow::before{background:var(--logo-green);width:32px}
+.hero .eyebrow::before,.areas .eyebrow::before{background:var(--band-accent)}
+.logo{gap:.65rem}
+.logo-mark{width:56px;height:56px;flex:none;display:block}
+.logo-text{display:grid;gap:5px;line-height:1;font-family:var(--brand)}
+.logo-text b{font:900 1.6rem/1 var(--brand);letter-spacing:.01em;color:var(--logo-blue)}
+.logo-text b i{font-style:normal;color:var(--logo-green)}
+.logo-text span{font:700 .58rem/1 var(--brand);letter-spacing:.3em;text-transform:uppercase;color:var(--ink-2)}
+@media (max-width:440px){.logo-mark{width:44px;height:44px}.logo-text b{font-size:1.3rem}.logo-text span{font-size:.5rem;letter-spacing:.24em}}
+@media (min-width:1180px) and (max-width:1360px){.logo-text b{font-size:1.4rem}.logo-mark{width:50px;height:50px}}
+.nav a{font-family:var(--display);font-weight:600;font-size:.86rem}
+.btn{font-family:var(--display);font-weight:700;letter-spacing:.08em;font-size:.86rem}
+.hero h1{font-size:clamp(2.1rem,4.2vw,3.5rem);line-height:1.04;max-width:16ch}
+.svc-line{display:flex;flex-wrap:wrap;gap:.35rem .9rem;margin-top:1.1rem;font:600 .78rem/1.4 var(--display);letter-spacing:.16em;text-transform:uppercase;color:var(--band-fg)}
+.svc-line span{display:inline-flex;align-items:center;gap:.9rem}
+.svc-line span:not(:last-child)::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--band-accent)}
+.mobile-nav a{font-size:1.05rem;font-weight:700}
+.trust b{font-size:.92rem;font-weight:800}
+.svc-card b{font-size:.98rem;font-weight:800}
+.svc-num{font-size:1.5rem;font-weight:800}
+.svc-body h3{font-size:clamp(1.5rem,2.6vw,2rem)}
+.overview-copy h3{font-size:clamp(1.3rem,2.2vw,1.65rem)}
+.why-card h3{font-size:1.1rem}
+.values span{font-size:.78rem;font-weight:700;letter-spacing:.16em}
+.region li{font-size:clamp(1.15rem,1.9vw,1.4rem);font-weight:800}
+.ph b{font-size:.95rem}
+.step .n{font-size:2.4rem;font-weight:800;color:var(--logo-green)}
+.step h3{font-size:1.05rem}
+.cta-band h2{font-size:clamp(1.6rem,3vw,2.3rem)}
+.form-card h3{font-size:clamp(1.3rem,2.2vw,1.7rem)}
+.c-cell h3{font-size:1rem}
+.video-empty b{font-size:1.05rem}
+.ana .lbl{font:800 12px var(--display);letter-spacing:.08em}
+.svc-num{color:var(--logo-blue)}
+.benefits svg,.why-card svg,.trust svg,.c-cell svg{color:var(--copper)}
+.site-footer h4{font-family:var(--display);letter-spacing:.22em}
+</style>
+
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- Inline SVG symbol library -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></g></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></g></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="m8 12.2 2.7 2.7L16 9.5"/></g></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></g></symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></g></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h3l2-3h6l2 3h3v13H4z"/><circle cx="12" cy="13" r="3.5"/></g></symbol>
+    <symbol id="i-image" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="9.5" r="1.8"/><path d="m3 17 5-5 4 4 3-3 6 6"/></g></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20l1.2-4A8 8 0 1 1 8 19z"/><path d="M9 9.5c.3 2.4 2.2 4.4 4.6 4.9l1.2-1.2 1.8.8-.4 1.6c-3.9.2-7.4-3.3-7.2-7.2l1.6-.4.8 1.8z"/></g></symbol>
+    <symbol id="i-quality" viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="2"><path d="M20 4 24 8.5 30 8l.5 6L35 18l-4.5 4 .5 6-6 .5L20 33l-4-4.5-6 .5-.5-6L5 18l4.5-4L9 8l6 .5z"/><path d="m14.5 18.5 4 4 7-7.5"/></g></symbol>
+    <symbol id="i-integrity" viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="2"><path d="M20 4 33 9v10c0 8-5.6 14-13 17C12.6 33 7 27 7 19V9z"/><path d="M20 12v14M14 19h12"/></g></symbol>
+    <symbol id="i-honest" viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="2"><path d="M4 22l7-7 6 3 5-4 6 2 8 6"/><path d="M11 15l-4 11 9 7 4-3 4 3 4-3 4 1 2-5"/><path d="M17 18l6 6"/></g></symbol>
+    <symbol id="i-smile" viewBox="0 0 40 40"><g fill="none" stroke="currentColor" stroke-width="2"><path d="M6 17 20 6l14 11"/><path d="M9 15v19h22V15"/><path d="M15 23c2.6 3.5 7.4 3.5 10 0"/><path d="M16 19v.5M24 19v.5" stroke-linecap="round" stroke-width="2.6"/></g></symbol>
+  </defs>
+</svg>
+
+<!-- Eave cross-section template (used by the overview and each service) -->
+<template id="anatomy-tpl">
+<svg class="ana" viewBox="0 0 640 420" role="img">
+  <title>Cross-section of a roof edge showing where gutter, leaf guard, fascia, soffit and vinyl siding are installed</title>
+  <!-- wall + siding -->
+  <g data-p="siding">
+    <rect class="a-sidbg" x="420" y="204" width="220" height="216"/>
+    <g class="a-sid">
+      <line x1="420" y1="226" x2="640" y2="226"/><line x1="420" y1="248" x2="640" y2="248"/><line x1="420" y1="270" x2="640" y2="270"/><line x1="420" y1="292" x2="640" y2="292"/><line x1="420" y1="314" x2="640" y2="314"/><line x1="420" y1="336" x2="640" y2="336"/><line x1="420" y1="358" x2="640" y2="358"/><line x1="420" y1="380" x2="640" y2="380"/><line x1="420" y1="402" x2="640" y2="402"/>
+    </g>
+    <rect x="496" y="332" width="128" height="26" rx="3" fill="var(--surface)" stroke="var(--line)"/>
+    <text class="lbl" x="560" y="350" text-anchor="middle">Vinyl Siding</text>
+  </g>
+  <!-- roof deck + shingles -->
+  <polygon class="a-roof" points="640,34 640,58 190,176 190,152"/>
+  <polygon class="a-shingle" points="640,22 640,34 190,152 182,146"/>
+  <!-- soffit -->
+  <g data-p="soffit">
+    <rect class="part" x="190" y="196" width="230" height="9"/>
+    <g stroke="var(--surface)" stroke-width="2"><line x1="240" y1="198" x2="240" y2="203"/><line x1="262" y1="198" x2="262" y2="203"/><line x1="284" y1="198" x2="284" y2="203"/><line x1="306" y1="198" x2="306" y2="203"/><line x1="328" y1="198" x2="328" y2="203"/><line x1="350" y1="198" x2="350" y2="203"/></g>
+    <path class="lead" d="M300 206 V244"/><circle class="dot" cx="300" cy="206" r="3"/>
+    <text class="lbl" x="300" y="264" text-anchor="middle">Soffit</text>
+    <text class="lbl-s" x="300" y="280" text-anchor="middle">Vinyl or aluminum</text>
+  </g>
+  <!-- fascia -->
+  <g data-p="fascia">
+    <rect class="part" x="176" y="146" width="14" height="59"/>
+    <path class="lead" d="M183 206 V318"/><circle class="dot" cx="183" cy="206" r="3"/>
+    <text class="lbl" x="183" y="338" text-anchor="middle">Fascia</text>
+    <text class="lbl-s" x="183" y="354" text-anchor="middle">Standard or custom</text>
+  </g>
+  <!-- gutter -->
+  <g data-p="gutter">
+    <path class="part" d="M176 156 L176 198 Q176 206 168 206 L128 206 Q118 206 117 196 L113 160 L106 156 L112 154 L120 158 L124 192 Q125 198 131 198 L166 198 Q169 198 169 194 L169 156 Z"/>
+    <path class="lead" d="M120 206 L78 250"/><circle class="dot" cx="120" cy="206" r="3"/>
+    <text class="lbl" x="20" y="270">Gutter</text>
+    <text class="lbl-s" x="20" y="286">6&quot; or 7&quot;</text>
+  </g>
+  <!-- leaf guard -->
+  <g data-p="leafguard">
+    <path class="guard" d="M110 154 L178 146"/>
+    <ellipse class="leaf" cx="132" cy="147" rx="9" ry="3.5" transform="rotate(-18 132 147)"/>
+    <ellipse class="leaf" cx="156" cy="146" rx="8" ry="3" transform="rotate(12 156 146)"/>
+    <path class="lead" d="M140 150 L96 112"/><circle class="dot" cx="140" cy="150" r="3"/>
+    <text class="lbl" x="20" y="96">Leaf Guard</text>
+    <text class="lbl-s" x="20" y="112" dx="0" dy="0"></text>
+  </g>
+</svg>
+</template>
+
+<header class="site-header" id="top">
+  <div class="wrap hdr">
+    <a class="logo" href="#top" aria-label="CKM Multiservices LLC, back to top">
+      <img class="logo-mark" src="brand/ckm-badge-112.png" width="56" height="56" alt="">
+      <span class="logo-text"><b>C<i>K</i>M</b><span>Multiservices</span></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#top">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#areas">Service Areas</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="hdr-actions">
+      <div class="lang" id="langSwitch" role="group" aria-label="Language">
+        <button type="button" data-lang="en" lang="en" aria-pressed="true" title="English">EN</button>
+        <button type="button" data-lang="pt" lang="pt" aria-pressed="false" title="Português">PT</button>
+        <button type="button" data-lang="es" lang="es" aria-pressed="false" title="Español">ES</button>
+      </div>
+      <a class="hdr-phone" href="tel:+13212400711"><small>Call us</small>(321) 240-0711</a>
+      <a class="btn btn-primary hdr-cta" href="#estimate">Free Estimate</a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path id="menuIcon" d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile" hidden>
+    <div class="wrap">
+      <ul>
+        <li><a href="#top">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#areas">Service Areas</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a class="btn btn-primary" href="#estimate">Get a Free Estimate</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Family-Owned &middot; Orlando, Florida</p>
+      <h1 id="hero-title">Quality Exterior Services <em>Built Around Your Home</em></h1>
+      <p class="lede">Professional gutter, soffit, fascia, vinyl siding and leaf guard installation across Central Florida.</p>
+      <p class="svc-line" aria-label="Services"><span>Gutters</span><span>Soffit</span><span>Fascia</span><span>Siding</span><span>Leaf Guard</span></p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#estimate">Get a Free Estimate <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-ghost" href="#services">Explore Our Services</a>
+      </div>
+      <p class="hero-call"><svg width="20" height="20" aria-hidden="true" style="color:var(--band-accent)"><use href="#i-phone"/></svg> Prefer to talk? <a href="tel:+13212400711">(321) 240-0711</a></p>
+    </div>
+    <figure class="hero-photo">
+      <img src="photos/hero-gutters.jpg" alt="Single-story home with dark gutters and downspouts along the roofline" width="1600" height="739" fetchpriority="high">
+      <figcaption>Recent work &middot; Gutters</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- TRUST / VALUE -->
+<section class="trust" aria-label="Why homeowners call CKM">
+  <div class="wrap">
+    <ul>
+      <li><svg aria-hidden="true"><use href="#i-home"/></svg><div><b>Family-Owned</b><span>A family business caring for your home</span></div></li>
+      <li><svg aria-hidden="true"><use href="#i-doc"/></svg><div><b>Free Estimates</b><span>Tell us about your project at no cost</span></div></li>
+      <li><svg aria-hidden="true"><use href="#i-pin"/></svg><div><b>Central Florida</b><span>Orlando, Tampa Bay &amp; the Gulf Coast</span></div></li>
+      <li><svg aria-hidden="true"><use href="#i-clock"/></svg><div><b>Mon &ndash; Fri</b><span>9:00 AM &ndash; 5:00 PM</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section class="video-sec" id="video" aria-labelledby="video-title">
+  <div class="wrap video-grid">
+    <div class="video-copy">
+      <p class="eyebrow">Watch &amp; Learn</p>
+      <h2 id="video-title">Why Gutters Are So Important in Florida</h2>
+      <p class="lede">Florida rain can turn a quiet afternoon into a roof-sized water event. In about a minute, this video shows how gutters collect that runoff and carry it away from your walls and foundation.</p>
+      <a class="btn btn-primary" href="#estimate">Get a Free Estimate</a>
+    </div>
+    <figure class="video-frame" data-noi18n>
+      <video id="promoVideo" controls playsinline preload="metadata" poster="video/why-gutters-florida-poster.jpg" aria-label="Video about gutters in Florida"></video>
+      <div class="video-empty" id="videoEmpty" hidden>
+        <svg aria-hidden="true"><use href="#i-camera"/></svg>
+        <b id="videoEmptyTitle"></b>
+        <span id="videoEmptyText"></span>
+      </div>
+      <figcaption class="video-note" id="videoNote" hidden></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services" aria-labelledby="services-title">
+  <div class="wrap">
+    <div class="sec-head split">
+      <div style="display:grid;gap:1rem">
+        <p class="eyebrow">Our Services</p>
+        <h2 id="services-title">Everything Along Your Roofline, Done Right</h2>
+      </div>
+      <p class="lede">We focus on the outside of your home: the gutters, soffit, fascia, siding and leaf guards that finish your roofline and help protect your home from Florida weather.</p>
+    </div>
+
+    <div class="svc-cards" id="svcCards"></div>
+
+    <div class="overview reveal">
+      <div class="overview-copy">
+        <h3>How it all fits together</h3>
+        <p>Each part of your roof edge has its own job. Pick a service to see where it sits on your home.</p>
+        <div class="svc-tabs" id="svcTabs" role="group" aria-label="Highlight a service on the diagram"></div>
+      </div>
+      <figure class="overview-fig" id="overviewFig" style="margin:0"></figure>
+    </div>
+
+    <div class="svc-list" id="svcList"></div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE -->
+<section class="why" id="why" aria-labelledby="why-title">
+  <div class="wrap">
+    <div class="sec-head split">
+      <div style="display:grid;gap:1rem">
+        <p class="eyebrow">Why CKM</p>
+        <h2 id="why-title">Why Choose CKM Multiservices?</h2>
+      </div>
+      <p class="lede">Our work is guided by a few simple values. They shape how we talk with you, how we treat your home and how we do the job.</p>
+    </div>
+    <div class="why-grid">
+      <article class="why-card reveal"><svg aria-hidden="true"><use href="#i-quality"/></svg><h3>Quality</h3><p>We take pride in careful, clean work and treat every home as if it were our own.</p></article>
+      <article class="why-card reveal"><svg aria-hidden="true"><use href="#i-integrity"/></svg><h3>Integrity</h3><p>We do what we say we will do, and we treat you and your property with respect.</p></article>
+      <article class="why-card reveal"><svg aria-hidden="true"><use href="#i-honest"/></svg><h3>Honest Service</h3><p>Straight answers and clear communication, so you understand your options before any work begins.</p></article>
+      <article class="why-card reveal"><svg aria-hidden="true"><use href="#i-smile"/></svg><h3>Customer Satisfaction</h3><p>Your satisfaction guides every project, from your first call to the finished job.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about" aria-labelledby="about-title">
+  <div class="wrap about-grid">
+    <div class="about-copy">
+      <p class="eyebrow">About Us &middot; Since 2019</p>
+      <h2 id="about-title">About CKM Multiservices</h2>
+      <p class="big">We are a family-owned company founded in 2019, built on values that remain part of every step we take: dedication, responsibility, trust and a commitment to excellence.</p>
+      <p>From the start, we have worked to keep improving, keeping pace with changes in our industry and adopting new tools, technologies and ways of working that let us give our customers an even better experience.</p>
+      <p>Our story is one of steady growth, a drive to innovate and care in every detail. We value what we have built over the years, while always looking ahead for new ways to do better.</p>
+      <p>From a family business to a company that keeps evolving, we continue to grow, innovate and refine the way we work, always with our values at the center of everything we do.</p>
+      <div class="values" aria-label="Our values"><span>Honesty</span><span>Integrity</span><span>Quality</span></div>
+    </div>
+    <figure class="about-side">
+      <img src="photos/gutter-02.jpg" alt="White gutters and downspout on a two-story home with palm trees" width="1200" height="1600" loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band" aria-label="Request a quote">
+  <div class="wrap">
+    <div>
+      <h2>Ready to Talk About Your Home?</h2>
+      <p>Tell us what you need and we'll contact you to discuss your project and set up a visit.</p>
+    </div>
+    <div class="btns">
+      <a class="btn btn-dark" href="#estimate">Request a Quote</a>
+      <a class="btn btn-ghost" href="tel:+13212400711"><svg aria-hidden="true"><use href="#i-phone"/></svg> Call Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- AREAS -->
+<section class="areas" id="areas" aria-labelledby="areas-title">
+  <div class="wrap">
+    <div class="sec-head split">
+      <div style="display:grid;gap:1rem">
+        <p class="eyebrow">Areas We Serve</p>
+        <h2 id="areas-title">Serving Central Florida</h2>
+      </div>
+      <p class="lede">From our office in Orlando, we work with homeowners across Central Florida, the Tampa Bay area and the Gulf Coast.</p>
+    </div>
+    <div class="area-grid">
+      <div class="region reveal"><h3>Orlando Area</h3><ul><li>Orlando <small>FL</small></li><li>Clermont <small>FL</small></li></ul></div>
+      <div class="region reveal"><h3>Tampa Bay</h3><ul><li>Tampa <small>FL</small></li><li>Saint Petersburg <small>FL</small></li></ul></div>
+      <div class="region reveal"><h3>Gulf Coast</h3><ul><li>Sarasota <small>FL</small></li><li>Venice <small>FL</small></li><li>Port Charlotte <small>FL</small></li><li>Placida <small>FL</small></li></ul></div>
+    </div>
+    <div class="area-cta">
+      <p>Looking for gutter, soffit, fascia, siding or leaf guard services in your area?</p>
+      <div class="btns">
+        <a class="btn btn-primary" href="#estimate">Request a Free Estimate</a>
+      </div>
+    </div>
+    <p class="area-note"><b>Don't see your city?</b> <a href="#contact">Contact us to discuss your project.</a></p>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery" aria-labelledby="gallery-title">
+  <div class="wrap">
+    <div class="sec-head split">
+      <div style="display:grid;gap:1rem">
+        <p class="eyebrow">Project Gallery</p>
+        <h2 id="gallery-title">Our Recent Work</h2>
+      </div>
+      <p class="lede">A look at gutter, soffit, fascia and vinyl siding projects completed by our team.</p>
+    </div>
+    <div class="filters" id="filters" role="group" aria-label="Filter projects"></div>
+    <div class="masonry" id="masonry" data-noi18n></div>
+    <p class="gallery-note">Leaf guard project photos coming soon.</p>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process" aria-labelledby="process-title">
+  <div class="wrap">
+    <div class="sec-head split">
+      <div style="display:grid;gap:1rem">
+        <p class="eyebrow">How It Works</p>
+        <h2 id="process-title">Four Simple Steps</h2>
+      </div>
+      <p class="lede">Getting started takes a few minutes. Here is what to expect after you reach out.</p>
+    </div>
+    <ol class="steps">
+      <li class="step reveal"><span class="n">01</span><h3>Request a Free Estimate</h3><p>Call us or fill out the form with your contact details and project address.</p></li>
+      <li class="step reveal"><span class="n">02</span><h3>Tell Us About Your Project</h3><p>Let us know which services you need, share any details and add photos if you have them.</p></li>
+      <li class="step reveal"><span class="n">03</span><h3>Schedule Your Visit</h3><p>We'll contact you to set up a visit on a day and time that works for you.</p></li>
+      <li class="step reveal"><span class="n">04</span><h3>Get Your Project Started</h3><p>Once you're ready to move forward, we'll schedule the work on your home.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ESTIMATE -->
+<section class="estimate" id="estimate" aria-labelledby="estimate-title">
+  <div class="wrap est-grid">
+    <aside class="est-aside">
+      <p class="eyebrow">Free Estimate</p>
+      <h2 id="estimate-title">Request a Free Estimate</h2>
+      <p class="lede">Share a few details about your home and the work you have in mind. Our estimates are handled by Karyna Lisboa, who will reach out to discuss your project.</p>
+      <div class="contact-card">
+        <div class="cc-row"><svg aria-hidden="true"><use href="#i-phone"/></svg><div><small>Phone / WhatsApp</small><a href="tel:+13212400711">+1 (321) 240-0711</a><button class="copy-btn" type="button" data-copy="+1 (321) 240-0711" data-t="Copy">Copy</button></div></div>
+        <div class="cc-row"><svg aria-hidden="true"><use href="#i-mail"/></svg><div><small>Email</small><a href="mailto:ckmmultiservicess@gmail.com">ckmmultiservicess@gmail.com</a><button class="copy-btn" type="button" data-copy="ckmmultiservicess@gmail.com" data-t="Copy">Copy</button></div></div>
+        <div class="cc-row"><svg aria-hidden="true"><use href="#i-clock"/></svg><div><small>Office Hours</small><span>Monday &ndash; Friday, 9:00 AM &ndash; 5:00 PM</span></div></div>
+      </div>
+    </aside>
+
+    <div class="form-card" id="formCard">
+      <form id="estimateForm" novalidate data-endpoint="/api/estimate">
+        <h3>Tell Us About Your Project</h3>
+        <p class="sub">Fields marked <span class="req">*</span> are required.</p>
+
+        <fieldset class="fs">
+          <legend>Your Contact Information</legend>
+          <div class="row two">
+            <div class="field"><label for="firstName">First Name <span class="req">*</span></label><input type="text" id="firstName" name="firstName" autocomplete="given-name" required></div>
+            <div class="field"><label for="lastName">Last Name <span class="req">*</span></label><input type="text" id="lastName" name="lastName" autocomplete="family-name" required></div>
+          </div>
+          <div class="row two">
+            <div class="field"><label for="email">Email <span class="req">*</span></label><input type="email" id="email" name="email" autocomplete="email" inputmode="email" required></div>
+            <div class="field"><label for="phone">Phone <span class="req">*</span></label><input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="(000) 000-0000" required></div>
+          </div>
+        </fieldset>
+
+        <fieldset class="fs">
+          <legend>Project Location</legend>
+          <div class="row">
+            <div class="field"><label for="address">Project Address <span class="req">*</span></label><input type="text" id="address" name="address" autocomplete="street-address" placeholder="Street address" required></div>
+          </div>
+          <div class="row three">
+            <div class="field"><label for="city">City <span class="req">*</span></label><input type="text" id="city" name="city" autocomplete="address-level2" list="cityList" required>
+              <datalist id="cityList"><option value="Orlando"><option value="Saint Petersburg"><option value="Clermont"><option value="Tampa"><option value="Sarasota"><option value="Port Charlotte"><option value="Venice"><option value="Placida"></datalist></div>
+            <div class="field"><label for="state">State <span class="req">*</span></label><input type="text" id="state" name="state" autocomplete="address-level1" value="FL" maxlength="2" required></div>
+            <div class="field"><label for="zip">ZIP Code <span class="req">*</span></label><input type="text" id="zip" name="zip" autocomplete="postal-code" inputmode="numeric" maxlength="10" required></div>
+          </div>
+        </fieldset>
+
+        <fieldset class="fs" id="serviceSet">
+          <legend>Service Needed <span class="req">*</span> <span class="opt">(select all that apply)</span></legend>
+          <div class="chips">
+            <label class="chip"><input type="checkbox" id="svc-gutter" name="service" value="Gutter"><span>Gutter</span></label>
+            <label class="chip"><input type="checkbox" id="svc-soffit" name="service" value="Soffit"><span>Soffit</span></label>
+            <label class="chip"><input type="checkbox" id="svc-fascia" name="service" value="Fascia"><span>Fascia</span></label>
+            <label class="chip"><input type="checkbox" id="svc-siding" name="service" value="Vinyl Siding"><span>Vinyl Siding</span></label>
+            <label class="chip"><input type="checkbox" id="svc-leafguard" name="service" value="Leaf Guard"><span>Leaf Guard</span></label>
+          </div>
+          <p class="err-msg" id="serviceErr" hidden>Choose at least one service so we know what you need.</p>
+        </fieldset>
+
+        <fieldset class="fs">
+          <legend>Project Details</legend>
+          <div class="row">
+            <div class="field"><label for="message">Project Details / Message <span class="opt">(optional)</span></label><textarea id="message" name="message" placeholder="For example: the length of the roofline, what needs replacing, or any concerns you have."></textarea></div>
+          </div>
+          <div class="row two">
+            <div class="field"><label for="prefDay">Preferred Day <span class="opt">(optional)</span></label><input type="date" id="prefDay" name="prefDay"></div>
+            <div class="field"><label for="prefTime">Preferred Time <span class="opt">(optional)</span></label>
+              <select id="prefTime" name="prefTime">
+                <option value="">No preference</option>
+                <option value="Morning (9 AM – 12 PM)">Morning (9 AM &ndash; 12 PM)</option>
+                <option value="Afternoon (12 PM – 5 PM)">Afternoon (12 PM &ndash; 5 PM)</option>
+              </select></div>
+          </div>
+          <div class="row">
+            <div class="field">
+              <span class="lbl-like" id="photosLbl">Add Photos <span class="opt">(optional)</span></span>
+              <label class="drop" id="drop" for="photos">
+                <input type="file" id="photos" name="photos" accept="image/*" multiple aria-labelledby="photosLbl">
+                <svg aria-hidden="true"><use href="#i-camera"/></svg>
+                <b>Tap to add photos of the area</b>
+                <small>JPG or PNG. Photos help us understand your project.</small>
+              </label>
+              <div class="thumbs" id="thumbs" aria-live="polite"></div>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="hp" aria-hidden="true"><label for="company_website">Company website</label><input type="text" id="company_website" name="company_website" tabindex="-1" autocomplete="off"></div>
+        <p class="form-error" id="formError" role="alert" hidden></p>
+        <div class="submit-row">
+          <button class="btn btn-primary" type="submit" id="submitBtn" data-t="Request My Free Estimate">Request My Free Estimate</button>
+          <p>We'll review your request and contact you to discuss your project.</p>
+        </div>
+      </form>
+      <div class="success" id="success" hidden tabindex="-1" data-noi18n></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact" aria-labelledby="contact-title">
+  <div class="wrap">
+    <div class="sec-head split">
+      <div style="display:grid;gap:1rem">
+        <p class="eyebrow">Contact</p>
+        <h2 id="contact-title">Contact Us</h2>
+      </div>
+      <p class="lede">Call, email or send a WhatsApp message during office hours. We look forward to hearing about your project.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="c-cell"><svg aria-hidden="true"><use href="#i-phone"/></svg><h3>Call Us</h3><a href="tel:+13212400711">+1 (321) 240-0711</a><p>Monday &ndash; Friday, 9:00 AM &ndash; 5:00 PM</p></div>
+      <div class="c-cell"><svg aria-hidden="true"><use href="#i-wa"/></svg><h3>WhatsApp</h3><a href="https://wa.me/13212400711" target="_blank" rel="noopener">+1 (321) 240-0711</a><p>Send photos and questions by message.</p></div>
+      <div class="c-cell"><svg aria-hidden="true"><use href="#i-mail"/></svg><h3>Email</h3><a href="mailto:ckmmultiservicess@gmail.com">ckmmultiservicess@gmail.com</a><p>For estimates, ask for Karyna Lisboa.</p></div>
+      <div class="c-cell"><svg aria-hidden="true"><use href="#i-pin"/></svg><h3>Office</h3><address>6735 Conroy Windermere Rd, Suite 233<br>Orlando, FL 32835</address><p><a href="https://www.google.com/maps/search/?api=1&amp;query=6735+Conroy+Windermere+Rd+Suite+233+Orlando+FL+32835" target="_blank" rel="noopener" style="font-weight:500;text-decoration:underline">Open in Google Maps</a></p></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="ft-grid">
+      <div class="ft-about">
+        <a class="logo ft-logo" href="#top" aria-label="CKM Multiservices LLC, back to top">
+          <img src="brand/ckm-badge-192.png" width="120" height="120" alt="CKM Multiservices logo">
+        </a>
+        <p>A family-owned company committed to always delivering the best service while focusing on customer satisfaction.</p>
+        <a class="btn btn-primary" href="#estimate" style="margin-top:1.4rem;color:var(--on-copper)">Get a Free Estimate</a>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#svc-gutter-sec">Gutter Installation</a></li>
+          <li><a href="#svc-soffit-sec">Soffit Installation</a></li>
+          <li><a href="#svc-fascia-sec">Fascia Installation</a></li>
+          <li><a href="#svc-siding-sec">Vinyl Siding</a></li>
+          <li><a href="#svc-leafguard-sec">Leaf Guards</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Service Areas</h4>
+        <ul>
+          <li>Orlando</li><li>Clermont</li><li>Tampa</li><li>Saint Petersburg</li><li>Sarasota</li><li>Venice</li><li>Port Charlotte</li><li>Placida</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+13212400711">+1 (321) 240-0711</a></li>
+          <li><a href="mailto:ckmmultiservicess@gmail.com">ckmmultiservicess@gmail.com</a></li>
+          <li>6735 Conroy Windermere Rd, Suite 233<br>Orlando, FL 32835</li>
+          <li>Mon &ndash; Fri, 9:00 AM &ndash; 5:00 PM</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <span>&copy; <span id="yr">2026</span> CKM Multiservices LLC. All rights reserved.</span>
+      <span>EIN 32-0605521</span>
+    </div>
+  </div>
+</footer>
+
+<nav class="float-bar" aria-label="Quick actions">
+  <a href="tel:+13212400711"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call</a>
+  <a href="https://wa.me/13212400711" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+  <a class="go" href="#estimate">Free Estimate</a>
+</nav>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Project photo viewer" hidden>
+  <div class="lb-inner">
+    <div class="lb-stage" id="lbStage" data-noi18n></div>
+    <div class="lb-bar">
+      <p id="lbCaption" data-noi18n></p>
+      <div class="lb-btns">
+        <button type="button" id="lbPrev" aria-label="Previous photo"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2"/></svg></button>
+        <button type="button" id="lbNext" aria-label="Next photo"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2"/></svg></button>
+        <button type="button" id="lbClose" aria-label="Close viewer"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2.2"/></svg></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const $ = (s,r=document)=>r.querySelector(s);
+  const $$ = (s,r=document)=>Array.from(r.querySelectorAll(s));
+
+  /* ---------- Translations: [English, Português, Español] ----------
+     English text in the page is the key. To edit a translation, change the PT or ES column. */
+  const ROWS = [
+    [`Skip to content`,`Pular para o conteúdo`,`Saltar al contenido`],
+    [`Language`,`Idioma`,`Idioma`],
+    [`Cross-section of a roof edge showing where gutter, leaf guard, fascia, soffit and vinyl siding are installed`,`Corte da borda do telhado mostrando onde ficam a calha, o protetor de calha, a fascia, o soffit e o siding de vinil`,`Corte del borde del techo que muestra dónde se instalan la canaleta, el protector de canaletas, la fascia, el soffit y el siding de vinilo`],
+    [`Vinyl Siding`,`Siding de Vinil`,`Siding de Vinilo`],
+    [`Soffit`,`Soffit`,`Soffit`],
+    [`Vinyl or aluminum`,`Vinil ou alumínio`,`Vinilo o aluminio`],
+    [`Fascia`,`Fascia`,`Fascia`],
+    [`Standard or custom`,`Padrão ou personalizada`,`Estándar o a medida`],
+    [`Gutter`,`Calha`,`Canaleta`],
+    [`6" or 7"`,`6" ou 7"`,`6" o 7"`],
+    [`Leaf Guard`,`Protetor de Calha`,`Protector de Canaletas`],
+    [`Home`,`Início`,`Inicio`],
+    [`About`,`Sobre Nós`,`Nosotros`],
+    [`Services`,`Serviços`,`Servicios`],
+    [`Service Areas`,`Áreas Atendidas`,`Áreas de Servicio`],
+    [`Gallery`,`Galeria`,`Galería`],
+    [`Contact`,`Contato`,`Contacto`],
+    [`Call us`,`Ligue`,`Llámenos`],
+    [`Get a Free Estimate`,`Peça um Orçamento Grátis`,`Pida un Estimado Gratis`],
+    [`CKM Multiservices LLC, back to top`,`CKM Multiservices LLC, voltar ao topo`,`CKM Multiservices LLC, volver arriba`],
+    [`Open menu`,`Abrir menu`,`Abrir menú`],
+    [`Close menu`,`Fechar menu`,`Cerrar menú`],
+    [`Family-Owned · Orlando, Florida`,`Empresa Familiar · Orlando, Flórida`,`Empresa Familiar · Orlando, Florida`],
+    [`Quality Exterior Services`,`Serviços Externos de Qualidade`,`Servicios Exteriores de Calidad`],
+    [`Built Around Your Home`,`Pensados para a Sua Casa`,`Pensados para Su Hogar`],
+    [`Professional gutter, soffit, fascia, vinyl siding and leaf guard installation across Central Florida.`,`Instalação profissional de calhas, soffit, fascia, siding de vinil e protetores de calha em toda a Flórida Central.`,`Instalación profesional de canaletas, soffit, fascia, siding de vinilo y protectores de canaletas en todo el centro de Florida.`],
+    [`Explore Our Services`,`Conheça Nossos Serviços`,`Conozca Nuestros Servicios`],
+    [`Prefer to talk?`,`Prefere conversar?`,`¿Prefiere hablar?`],
+    [`6" & 7" GUTTERS`,`CALHAS DE 6" E 7"`,`CANALETAS DE 6" Y 7"`],
+    [`Installed along the full roofline`,`Instaladas ao longo de todo o beiral`,`Instaladas a lo largo de todo el alero`],
+    [`Family-Owned`,`Empresa Familiar`,`Empresa Familiar`],
+    [`A family business caring for your home`,`Uma empresa familiar cuidando da sua casa`,`Un negocio familiar que cuida su hogar`],
+    [`Free Estimates`,`Orçamento Grátis`,`Estimados Gratis`],
+    [`Tell us about your project at no cost`,`Conte sobre seu projeto sem custo`,`Cuéntenos sobre su proyecto sin costo`],
+    [`Central Florida`,`Flórida Central`,`Centro de Florida`],
+    [`Orlando, Tampa Bay & the Gulf Coast`,`Orlando, Tampa Bay e Costa do Golfo`,`Orlando, Tampa Bay y la Costa del Golfo`],
+    [`Mon – Fri`,`Seg – Sex`,`Lun – Vie`],
+    [`9:00 AM – 5:00 PM`,`9h às 17h`,`9:00 AM – 5:00 PM`],
+    [`Our Services`,`Nossos Serviços`,`Nuestros Servicios`],
+    [`Everything Along Your Roofline, Done Right`,`Tudo ao Longo do Seu Beiral, Bem Feito`,`Todo a lo Largo de Su Alero, Bien Hecho`],
+    [`We focus on the outside of your home: the gutters, soffit, fascia, siding and leaf guards that finish your roofline and help protect your home from Florida weather.`,`Nosso foco é a parte externa da sua casa: calhas, soffit, fascia, siding e protetores de calha que dão acabamento ao beiral e ajudam a proteger sua casa do clima da Flórida.`,`Nos enfocamos en el exterior de su casa: las canaletas, el soffit, la fascia, el siding y los protectores de canaletas que dan acabado al alero y ayudan a proteger su hogar del clima de Florida.`],
+    [`How it all fits together`,`Como tudo se encaixa`,`Cómo encaja todo`],
+    [`Each part of your roof edge has its own job. Pick a service to see where it sits on your home.`,`Cada parte da borda do telhado tem sua função. Escolha um serviço para ver onde ele fica na sua casa.`,`Cada parte del borde del techo cumple una función. Elija un servicio para ver dónde se ubica en su casa.`],
+    [`All`,`Todos`,`Todos`],
+    [`Highlight a service on the diagram`,`Destacar um serviço no diagrama`,`Resaltar un servicio en el diagrama`],
+    [`6" & 7" Gutters`,`Calhas de 6" e 7"`,`Canaletas de 6" y 7"`],
+    [`Vinyl & Aluminum`,`Vinil e Alumínio`,`Vinilo y Aluminio`],
+    [`Standard & Custom`,`Padrão e Personalizada`,`Estándar y a Medida`],
+    [`Gutter Protection`,`Proteção de Calhas`,`Protección de Canaletas`],
+    [`Gutter Installation`,`Instalação de Calhas`,`Instalación de Canaletas`],
+    [`Soffit Installation`,`Instalação de Soffit`,`Instalación de Soffit`],
+    [`Fascia Installation`,`Instalação de Fascia`,`Instalación de Fascia`],
+    [`Vinyl Siding Installation`,`Instalação de Siding de Vinil`,`Instalación de Siding de Vinilo`],
+    [`Leaf Guard Installation`,`Instalação de Protetor de Calhas`,`Instalación de Protectores de Canaletas`],
+    [`Gutters collect rainwater from your roof and carry it away from your home. We install 6-inch and 7-inch gutters and will help you choose the size that fits your roofline.`,`As calhas recolhem a água da chuva do telhado e a levam para longe da sua casa. Instalamos calhas de 6 e 7 polegadas e ajudamos você a escolher o tamanho ideal para o seu telhado.`,`Las canaletas recogen el agua de lluvia del techo y la alejan de su casa. Instalamos canaletas de 6 y 7 pulgadas y le ayudamos a elegir el tamaño adecuado para su techo.`],
+    [`Directs rainwater away from your roofline, walls and foundation`,`Direciona a água da chuva para longe do beiral, das paredes e da fundação`,`Aleja el agua de lluvia del alero, las paredes y los cimientos`],
+    [`Available in 6" and 7" sizes`,`Disponível nos tamanhos de 6" e 7"`,`Disponibles en tamaños de 6" y 7"`],
+    [`Installed to follow the lines of your home`,`Instalada acompanhando as linhas da sua casa`,`Instaladas siguiendo las líneas de su casa`],
+    [`Florida storms put gutters to work. During your free estimate, we will look at your roofline with you, talk through the 6" and 7" options and answer your questions before any work begins.`,`As chuvas da Flórida colocam as calhas para trabalhar. No orçamento gratuito, avaliamos o beiral com você, explicamos as opções de 6" e 7" e tiramos suas dúvidas antes de qualquer serviço.`,`Las tormentas de Florida ponen a trabajar las canaletas. Durante su estimado gratis, revisaremos el alero con usted, hablaremos de las opciones de 6" y 7" y responderemos sus preguntas antes de comenzar cualquier trabajo.`],
+    [`Soffit covers the underside of your roof overhang and gives your eaves a clean, finished look. We install both vinyl and aluminum soffit.`,`O soffit cobre a parte de baixo do beiral e dá um acabamento limpo à sua casa. Instalamos soffit de vinil e de alumínio.`,`El soffit cubre la parte inferior del alero y le da a su casa un acabado limpio. Instalamos soffit de vinilo y de aluminio.`],
+    [`Choice of vinyl or aluminum soffit`,`Opção de soffit de vinil ou alumínio`,`Opción de soffit de vinilo o aluminio`],
+    [`Finishes the underside of your eaves`,`Dá acabamento à parte de baixo do beiral`,`Da acabado a la parte inferior del alero`],
+    [`Clean, even lines along the roof overhang`,`Linhas limpas e uniformes ao longo do beiral`,`Líneas limpias y parejas a lo largo del alero`],
+    [`Not sure whether vinyl or aluminum is the better fit for your home? We will go over both options with you during your free estimate.`,`Não sabe se vinil ou alumínio combina mais com a sua casa? Explicamos as duas opções no seu orçamento gratuito.`,`¿No está seguro si el vinilo o el aluminio es mejor para su casa? Le explicaremos ambas opciones durante su estimado gratis.`],
+    [`Fascia is the trim board that runs along the edge of your roof, and it is where your gutters attach. We install standard fascia as well as custom fascia made to suit your home.`,`A fascia é a tábua de acabamento na borda do telhado, onde as calhas são fixadas. Instalamos fascia padrão e fascia personalizada, feita sob medida para a sua casa.`,`La fascia es la tabla de acabado que recorre el borde del techo y es donde se fijan las canaletas. Instalamos fascia estándar y fascia a medida para su casa.`],
+    [`Standard and custom fascia options`,`Opções de fascia padrão e personalizada`,`Opciones de fascia estándar y a medida`],
+    [`A finished edge along your roofline`,`Acabamento na borda do telhado`,`Un borde con acabado a lo largo del techo`],
+    [`The surface your gutters mount to`,`A base onde as calhas são fixadas`,`La superficie donde se montan las canaletas`],
+    [`If your home calls for something other than a standard profile, ask us about custom fascia when you request your estimate.`,`Se a sua casa precisa de algo diferente do perfil padrão, pergunte sobre fascia personalizada ao pedir seu orçamento.`,`Si su casa necesita algo distinto a un perfil estándar, pregúntenos por la fascia a medida al solicitar su estimado.`],
+    [`Siding covers your exterior walls and sets the look of your entire home. We install vinyl siding for homeowners across Central Florida.`,`O siding reveste as paredes externas e define a aparência de toda a casa. Instalamos siding de vinil para proprietários em toda a Flórida Central.`,`El siding cubre las paredes exteriores y define el aspecto de toda su casa. Instalamos siding de vinilo para propietarios en todo el centro de Florida.`],
+    [`Refreshes the look of your home’s exterior`,`Renova a aparência externa da sua casa`,`Renueva el aspecto exterior de su casa`],
+    [`Covers and finishes exterior walls`,`Reveste e dá acabamento às paredes externas`,`Cubre y da acabado a las paredes exteriores`],
+    [`Pairs with new soffit, fascia and gutters for a coordinated exterior`,`Combina com soffit, fascia e calhas novos para um visual integrado`,`Combina con soffit, fascia y canaletas nuevos para un exterior coordinado`],
+    [`Planning more than one exterior project? Let us know in your estimate request and we can talk through siding together with your roofline work.`,`Planeja mais de um projeto externo? Conte no seu pedido de orçamento e podemos conversar sobre o siding junto com o serviço no beiral.`,`¿Planea más de un proyecto exterior? Indíquelo en su solicitud de estimado y podemos hablar del siding junto con el trabajo del alero.`],
+    [`Leaf guards sit over your gutters to help keep leaves out, so rainwater can keep flowing where it should.`,`O protetor de calha fica sobre as calhas e ajuda a impedir a entrada de folhas, para que a água da chuva continue escoando como deve.`,`Los protectores se colocan sobre las canaletas para ayudar a mantener fuera las hojas, de modo que el agua de lluvia siga fluyendo como debe.`],
+    [`Helps keep leaves out of your gutters`,`Ajuda a manter as folhas fora das calhas`,`Ayuda a mantener las hojas fuera de las canaletas`],
+    [`Protects your gutter system`,`Protege o sistema de calhas`,`Protege su sistema de canaletas`],
+    [`Helps keep water moving through your gutters`,`Ajuda a água a escoar pelas calhas`,`Ayuda a que el agua siga fluyendo por las canaletas`],
+    [`Leaf guards can be discussed alongside a gutter project or for gutters you already have. Mention it in your estimate request.`,`Podemos falar sobre protetores junto com um projeto de calhas ou para as calhas que você já tem. Mencione isso no seu pedido de orçamento.`,`Podemos hablar de los protectores junto con un proyecto de canaletas o para las canaletas que ya tiene. Menciónelo en su solicitud de estimado.`],
+    [`Learn More`,`Saiba Mais`,`Más Información`],
+    [`Show Less`,`Mostrar Menos`,`Mostrar Menos`],
+    [`Project photo coming soon`,`Foto do projeto em breve`,`Foto del proyecto próximamente`],
+    [`Why CKM`,`Por que a CKM`,`Por qué CKM`],
+    [`Why Choose CKM Multiservices?`,`Por que Escolher a CKM Multiservices?`,`¿Por qué Elegir CKM Multiservices?`],
+    [`Our work is guided by a few simple values. They shape how we talk with you, how we treat your home and how we do the job.`,`Nosso trabalho é guiado por valores simples. Eles definem como falamos com você, como tratamos sua casa e como fazemos o serviço.`,`Nuestro trabajo se guía por unos valores sencillos. Definen cómo hablamos con usted, cómo tratamos su casa y cómo hacemos el trabajo.`],
+    [`Quality`,`Qualidade`,`Calidad`],
+    [`Integrity`,`Integridade`,`Integridad`],
+    [`Honesty`,`Honestidade`,`Honestidad`],
+    [`Honest Service`,`Atendimento Honesto`,`Servicio Honesto`],
+    [`Customer Satisfaction`,`Satisfação do Cliente`,`Satisfacción del Cliente`],
+    [`We take pride in careful, clean work and treat every home as if it were our own.`,`Temos orgulho de um trabalho cuidadoso e limpo, e tratamos cada casa como se fosse nossa.`,`Nos enorgullece hacer un trabajo cuidadoso y limpio, y tratamos cada casa como si fuera nuestra.`],
+    [`We do what we say we will do, and we treat you and your property with respect.`,`Fazemos o que prometemos e tratamos você e seu imóvel com respeito.`,`Hacemos lo que decimos y lo tratamos a usted y a su propiedad con respeto.`],
+    [`Straight answers and clear communication, so you understand your options before any work begins.`,`Respostas diretas e comunicação clara, para você entender suas opções antes de qualquer serviço.`,`Respuestas directas y comunicación clara, para que entienda sus opciones antes de comenzar cualquier trabajo.`],
+    [`Your satisfaction guides every project, from your first call to the finished job.`,`Sua satisfação orienta cada projeto, do primeiro contato ao serviço concluído.`,`Su satisfacción guía cada proyecto, desde su primera llamada hasta el trabajo terminado.`],
+    [`About Us`,`Sobre Nós`,`Sobre Nosotros`],
+    [`We are a family-owned company founded in 2019, built on values that remain part of every step we take: dedication, responsibility, trust and a commitment to excellence.`,`Somos uma empresa familiar fundada em 2019, construída sobre valores que permanecem presentes em cada etapa da nossa trajetória: dedicação, responsabilidade, confiança e compromisso com a excelência.`,`Somos una empresa familiar fundada en 2019, construida sobre valores que siguen presentes en cada etapa de nuestro camino: dedicación, responsabilidad, confianza y compromiso con la excelencia.`],
+    [`From the start, we have worked to keep improving, keeping pace with changes in our industry and adopting new tools, technologies and ways of working that let us give our customers an even better experience.`,`Desde o início, buscamos evoluir constantemente, acompanhando as mudanças do mercado e incorporando novas ferramentas, tecnologias e formas de trabalho que nos permitem oferecer uma experiência cada vez melhor aos nossos clientes.`,`Desde el inicio, buscamos evolucionar constantemente, acompañando los cambios del mercado e incorporando nuevas herramientas, tecnologías y formas de trabajo que nos permiten ofrecer a nuestros clientes una experiencia cada vez mejor.`],
+    [`Our story is one of steady growth, a drive to innovate and care in every detail. We value what we have built over the years, while always looking ahead for new ways to do better.`,`Nossa história é marcada pelo crescimento contínuo, pela busca por inovação e pelo cuidado em cada detalhe. Valorizamos aquilo que construímos ao longo dos anos, sem deixar de olhar para o futuro e buscar novas maneiras de fazer melhor.`,`Nuestra historia está marcada por el crecimiento continuo, la búsqueda de innovación y el cuidado en cada detalle. Valoramos lo que hemos construido a lo largo de los años, sin dejar de mirar hacia el futuro y buscar nuevas maneras de hacerlo mejor.`],
+    [`From a family business to a company that keeps evolving, we continue to grow, innovate and refine the way we work, always with our values at the center of everything we do.`,`De uma empresa familiar para uma empresa em constante evolução, seguimos crescendo, inovando e aprimorando nossa forma de trabalhar, sempre mantendo nossos valores no centro de tudo.`,`De una empresa familiar a una empresa en constante evolución, seguimos creciendo, innovando y mejorando nuestra forma de trabajar, siempre con nuestros valores en el centro de todo.`],
+    [`About Us · Since 2019`,`Sobre Nós · Desde 2019`,`Sobre Nosotros · Desde 2019`],
+    [`About CKM Multiservices`,`Sobre a CKM Multiservices`,`Sobre CKM Multiservices`],
+    [`Our values`,`Nossos valores`,`Nuestros valores`],
+    [`Team photo placeholder`,`Espaço para foto da equipe`,`Espacio para foto del equipo`],
+    [`Replace with a real photo of the CKM team`,`Substituir por uma foto real da equipe CKM`,`Reemplazar con una foto real del equipo de CKM`],
+    [`Placeholder for a CKM team photo`,`Espaço reservado para foto da equipe CKM`,`Espacio reservado para foto del equipo de CKM`],
+    [`Company lead`,`Responsável pela empresa`,`Responsable de la empresa`],
+    [`Estimates`,`Orçamentos`,`Estimados`],
+    [`Ready to Talk About Your Home?`,`Pronto para Falar Sobre a Sua Casa?`,`¿Listo para Hablar de Su Casa?`],
+    [`Tell us what you need and we'll contact you to discuss your project and set up a visit.`,`Conte o que você precisa e entraremos em contato para conversar sobre o projeto e agendar uma visita.`,`Cuéntenos lo que necesita y nos comunicaremos con usted para hablar de su proyecto y programar una visita.`],
+    [`Request a Quote`,`Solicitar Orçamento`,`Solicitar Cotización`],
+    [`Call Us`,`Ligue para Nós`,`Llámenos`],
+    [`Areas We Serve`,`Áreas Atendidas`,`Áreas de Servicio`],
+    [`Serving Central Florida`,`Atendendo a Flórida Central`,`Al Servicio del Centro de Florida`],
+    [`From our office in Orlando, we work with homeowners across Central Florida, the Tampa Bay area and the Gulf Coast.`,`Do nosso escritório em Orlando, atendemos proprietários em toda a Flórida Central, na região de Tampa Bay e na Costa do Golfo.`,`Desde nuestra oficina en Orlando, trabajamos con propietarios en todo el centro de Florida, el área de Tampa Bay y la Costa del Golfo.`],
+    [`Orlando Area`,`Região de Orlando`,`Área de Orlando`],
+    [`Gulf Coast`,`Costa do Golfo`,`Costa del Golfo`],
+    [`Looking for gutter, soffit, fascia, siding or leaf guard services in your area?`,`Procurando serviços de calha, soffit, fascia, siding ou protetor de calha na sua região?`,`¿Busca servicios de canaletas, soffit, fascia, siding o protectores de canaletas en su área?`],
+    [`Request a Free Estimate`,`Solicite um Orçamento Grátis`,`Solicite un Estimado Gratis`],
+    [`Don't see your city?`,`Não encontrou sua cidade?`,`¿No ve su ciudad?`],
+    [`Contact us to discuss your project.`,`Fale conosco sobre o seu projeto.`,`Contáctenos para hablar de su proyecto.`],
+    [`Project Gallery`,`Galeria de Projetos`,`Galería de Proyectos`],
+    [`Our Recent Work`,`Nossos Trabalhos Recentes`,`Nuestros Trabajos Recientes`],
+    [`A look at gutter, soffit, fascia, vinyl siding and leaf guard projects completed by our team.`,`Uma amostra de projetos de calhas, soffit, fascia, siding de vinil e protetores de calha realizados pela nossa equipe.`,`Una muestra de proyectos de canaletas, soffit, fascia, siding de vinilo y protectores de canaletas realizados por nuestro equipo.`],
+    [`Filter projects`,`Filtrar projetos`,`Filtrar proyectos`],
+    [`All Projects`,`Todos os Projetos`,`Todos los Proyectos`],
+    [`Gutter Projects`,`Calhas`,`Canaletas`],
+    [`Soffit Projects`,`Soffit`,`Soffit`],
+    [`Fascia Projects`,`Fascia`,`Fascia`],
+    [`Vinyl Siding Projects`,`Siding de Vinil`,`Siding de Vinilo`],
+    [`Leaf Guard Projects`,`Protetor de Calha`,`Protectores de Canaletas`],
+    [`Project`,`Projeto`,`Proyecto`],
+    [`Open`,`Abrir`,`Abrir`],
+    [`placeholder`,`provisória`,`provisional`],
+    [`of`,`de`,`de`],
+    [`Photo placeholder · replace with real project photo`,`Espaço para foto · substituir por foto real do projeto`,`Espacio para foto · reemplazar con foto real del proyecto`],
+    [`Gallery tiles are placeholders. Each one is labeled with its category and will be replaced with real CKM project photos.`,`As imagens da galeria são provisórias. Cada uma está identificada pela categoria e será substituída por fotos reais dos projetos da CKM.`,`Las imágenes de la galería son provisionales. Cada una está identificada por categoría y se reemplazará con fotos reales de proyectos de CKM.`],
+    [`How It Works`,`Como Funciona`,`Cómo Funciona`],
+    [`Four Simple Steps`,`Quatro Passos Simples`,`Cuatro Pasos Sencillos`],
+    [`Getting started takes a few minutes. Here is what to expect after you reach out.`,`Começar leva poucos minutos. Veja o que acontece depois que você entra em contato.`,`Comenzar toma solo unos minutos. Esto es lo que puede esperar después de contactarnos.`],
+    [`Tell Us About Your Project`,`Conte Sobre o Seu Projeto`,`Cuéntenos Sobre Su Proyecto`],
+    [`Schedule Your Visit`,`Agende Sua Visita`,`Programe Su Visita`],
+    [`Get Your Project Started`,`Comece Seu Projeto`,`Comience Su Proyecto`],
+    [`Call us or fill out the form with your contact details and project address.`,`Ligue ou preencha o formulário com seus dados de contato e o endereço do projeto.`,`Llámenos o complete el formulario con sus datos de contacto y la dirección del proyecto.`],
+    [`Let us know which services you need, share any details and add photos if you have them.`,`Diga quais serviços você precisa, compartilhe detalhes e envie fotos se tiver.`,`Indíquenos qué servicios necesita, comparta los detalles y agregue fotos si las tiene.`],
+    [`We'll contact you to set up a visit on a day and time that works for you.`,`Entraremos em contato para agendar uma visita no dia e horário que forem melhores para você.`,`Nos comunicaremos con usted para programar una visita el día y la hora que le convengan.`],
+    [`Once you're ready to move forward, we'll schedule the work on your home.`,`Quando você decidir seguir em frente, agendamos o serviço na sua casa.`,`Cuando esté listo para seguir adelante, programaremos el trabajo en su casa.`],
+    [`Free Estimate`,`Orçamento Grátis`,`Estimado Gratis`],
+    [`Share a few details about your home and the work you have in mind. Our estimates are handled by Karyna Lisboa, who will reach out to discuss your project.`,`Conte alguns detalhes sobre sua casa e o serviço que você tem em mente. Os orçamentos são feitos por Karyna Lisboa, que entrará em contato para conversar sobre o seu projeto.`,`Comparta algunos detalles sobre su casa y el trabajo que tiene en mente. Los estimados están a cargo de Karyna Lisboa, quien se comunicará con usted para hablar de su proyecto.`],
+    [`Phone / WhatsApp`,`Telefone / WhatsApp`,`Teléfono / WhatsApp`],
+    [`Copy`,`Copiar`,`Copiar`],
+    [`Copied`,`Copiado`,`Copiado`],
+    [`Selected`,`Selecionado`,`Seleccionado`],
+    [`Email`,`E-mail`,`Correo electrónico`],
+    [`Office Hours`,`Horário de Atendimento`,`Horario de Atención`],
+    [`Monday – Friday, 9:00 AM – 5:00 PM`,`Segunda a sexta, das 9h às 17h`,`Lunes a viernes, 9:00 AM – 5:00 PM`],
+    [`Fields marked`,`Campos marcados com`,`Los campos marcados con`],
+    [`are required.`,`são obrigatórios.`,`son obligatorios.`],
+    [`Your Contact Information`,`Seus Dados de Contato`,`Sus Datos de Contacto`],
+    [`Project Location`,`Local do Projeto`,`Ubicación del Proyecto`],
+    [`Service Needed`,`Serviço Desejado`,`Servicio Necesario`],
+    [`(select all that apply)`,`(marque todos que se aplicam)`,`(seleccione todos los que apliquen)`],
+    [`Project Details`,`Detalhes do Projeto`,`Detalles del Proyecto`],
+    [`First Name`,`Nome`,`Nombre`],
+    [`Last Name`,`Sobrenome`,`Apellido`],
+    [`Phone`,`Telefone`,`Teléfono`],
+    [`Project Address`,`Endereço do Projeto`,`Dirección del Proyecto`],
+    [`City`,`Cidade`,`Ciudad`],
+    [`State`,`Estado`,`Estado`],
+    [`ZIP Code`,`ZIP Code (CEP)`,`Código Postal (ZIP)`],
+    [`Project Details / Message`,`Detalhes do Projeto / Mensagem`,`Detalles del Proyecto / Mensaje`],
+    [`(optional)`,`(opcional)`,`(opcional)`],
+    [`Preferred Day`,`Dia de Preferência`,`Día Preferido`],
+    [`Preferred Time`,`Horário de Preferência`,`Horario Preferido`],
+    [`Add Photos`,`Adicionar Fotos`,`Agregar Fotos`],
+    [`Street address`,`Rua e número`,`Calle y número`],
+    [`For example: the length of the roofline, what needs replacing, or any concerns you have.`,`Por exemplo: o tamanho do beiral, o que precisa ser trocado ou qualquer dúvida que você tenha.`,`Por ejemplo: el largo del alero, qué hay que reemplazar o cualquier inquietud que tenga.`],
+    [`No preference`,`Sem preferência`,`Sin preferencia`],
+    [`Morning (9 AM – 12 PM)`,`Manhã (9h – 12h)`,`Mañana (9 AM – 12 PM)`],
+    [`Afternoon (12 PM – 5 PM)`,`Tarde (12h – 17h)`,`Tarde (12 PM – 5 PM)`],
+    [`Choose at least one service so we know what you need.`,`Escolha pelo menos um serviço para sabermos do que você precisa.`,`Elija al menos un servicio para saber qué necesita.`],
+    [`Tap to add photos of the area`,`Toque para adicionar fotos do local`,`Toque para agregar fotos del área`],
+    [`JPG or PNG. Photos help us understand your project.`,`JPG ou PNG. As fotos nos ajudam a entender seu projeto.`,`JPG o PNG. Las fotos nos ayudan a entender su proyecto.`],
+    [`Request My Free Estimate`,`Solicitar Meu Orçamento Grátis`,`Solicitar Mi Estimado Gratis`],
+    [`We'll review your request and contact you to discuss your project.`,`Vamos analisar seu pedido e entrar em contato para conversar sobre o seu projeto.`,`Revisaremos su solicitud y nos comunicaremos con usted para hablar de su proyecto.`],
+    [`Contact Us`,`Fale Conosco`,`Contáctenos`],
+    [`Call, email or send a WhatsApp message during office hours. We look forward to hearing about your project.`,`Ligue, envie um e-mail ou mande mensagem no WhatsApp durante o horário de atendimento. Será um prazer conhecer o seu projeto.`,`Llame, envíe un correo o un mensaje por WhatsApp durante el horario de atención. Será un gusto conocer su proyecto.`],
+    [`Send photos and questions by message.`,`Envie fotos e dúvidas por mensagem.`,`Envíe fotos y preguntas por mensaje.`],
+    [`For estimates, ask for Karyna Lisboa.`,`Para orçamentos, fale com Karyna Lisboa.`,`Para estimados, pregunte por Karyna Lisboa.`],
+    [`Office`,`Escritório`,`Oficina`],
+    [`Open in Google Maps`,`Abrir no Google Maps`,`Abrir en Google Maps`],
+    [`A family-owned company committed to always delivering the best service while focusing on customer satisfaction.`,`Uma empresa familiar comprometida em sempre oferecer o melhor serviço, com foco na satisfação do cliente.`,`Una empresa familiar comprometida a ofrecer siempre el mejor servicio, con enfoque en la satisfacción del cliente.`],
+    [`Leaf Guards`,`Protetores de Calha`,`Protectores de Canaletas`],
+    [`Mon – Fri, 9:00 AM – 5:00 PM`,`Seg – Sex, 9h às 17h`,`Lun – Vie, 9:00 AM – 5:00 PM`],
+    [`CKM Multiservices LLC. All rights reserved.`,`CKM Multiservices LLC. Todos os direitos reservados.`,`CKM Multiservices LLC. Todos los derechos reservados.`],
+    [`Call`,`Ligar`,`Llamar`],
+    [`Enter your first name.`,`Informe seu nome.`,`Ingrese su nombre.`],
+    [`Enter your last name.`,`Informe seu sobrenome.`,`Ingrese su apellido.`],
+    [`Enter a valid email address, like name@example.com.`,`Informe um e-mail válido, como nome@exemplo.com.`,`Ingrese un correo válido, como nombre@ejemplo.com.`],
+    [`Enter a 10-digit phone number.`,`Informe um telefone com 10 dígitos.`,`Ingrese un número de teléfono de 10 dígitos.`],
+    [`Enter the street address of the project.`,`Informe o endereço do projeto.`,`Ingrese la dirección del proyecto.`],
+    [`Enter the city.`,`Informe a cidade.`,`Ingrese la ciudad.`],
+    [`Enter the 2-letter state, like FL.`,`Informe o estado com 2 letras, como FL.`,`Ingrese el estado con 2 letras, como FL.`],
+    [`Enter a 5-digit ZIP code.`,`Informe um ZIP code de 5 dígitos.`,`Ingrese un código postal de 5 dígitos.`],
+    [`Please complete this field.`,`Preencha este campo.`,`Complete este campo.`],
+    [`Thank You`,`Obrigado`,`Gracias`],
+    [`For anything urgent, call us at`,`Para algo urgente, ligue para`,`Si es urgente, llámenos al`],
+    [`Name`,`Nome`,`Nombre`],
+    [`Service`,`Serviço`,`Servicio`],
+    [`Address`,`Endereço`,`Dirección`],
+    [`Preferred visit`,`Visita preferida`,`Visita preferida`],
+    [`Photos`,`Fotos`,`Fotos`],
+    [`Preview build: this form is not yet connected to email, so requests are not delivered. Connect it before the site goes live.`,`Versão de prévia: este formulário ainda não está conectado ao e-mail, então os pedidos não são entregues. Conecte-o antes de publicar o site.`,`Versión de prueba: este formulario aún no está conectado al correo, así que las solicitudes no se envían. Conéctelo antes de publicar el sitio.`],
+    [`Recent work · Gutters`,`Trabalho recente · Calhas`,`Trabajo reciente · Canaletas`],
+    [`Leaf guard project photos coming soon.`,`Fotos de projetos de protetor de calha em breve.`,`Fotos de proyectos de protectores de canaletas próximamente.`],
+    [`A look at gutter, soffit, fascia and vinyl siding projects completed by our team.`,`Uma amostra de projetos de calhas, soffit, fascia e siding de vinil realizados pela nossa equipe.`,`Una muestra de proyectos de canaletas, soffit, fascia y siding de vinilo realizados por nuestro equipo.`],
+    [`Single-story home with dark gutters and downspouts along the roofline`,`Casa térrea com calhas e condutores escuros ao longo do beiral`,`Casa de un piso con canaletas y bajantes oscuros a lo largo del alero`],
+    [`Dark gutter and downspout along the side of a white home`,`Calha e condutor escuros na lateral de uma casa branca`,`Canaleta y bajante oscuros en el costado de una casa blanca`],
+    [`White gutters and downspout on a two-story home with palm trees`,`Calhas e condutor brancos em uma casa de dois andares com palmeiras`,`Canaletas y bajante blancos en una casa de dos pisos con palmeras`],
+    [`Soffit and siding under a roof overhang, seen from below`,`Soffit e siding sob o beiral, vistos de baixo`,`Soffit y siding bajo el alero, vistos desde abajo`],
+    [`Garage with gray vinyl siding and white trim`,`Garagem com siding de vinil cinza e acabamento branco`,`Garaje con siding de vinilo gris y molduras blancas`],
+    [`White gutter and downspout along a home with green shutters`,`Calha e condutor brancos em uma casa com janelas verdes`,`Canaleta y bajante blancos en una casa con persianas verdes`],
+    [`Soffit and fascia along the eave of a stucco home`,`Soffit e fascia no beiral de uma casa de reboco`,`Soffit y fascia en el alero de una casa de estuco`],
+    [`White soffit under the roof overhang of a home`,`Soffit branco sob o beiral de uma casa`,`Soffit blanco bajo el alero de una casa`],
+    [`White gutter and downspout on a stucco wall`,`Calha e condutor brancos em parede de reboco`,`Canaleta y bajante blancos en una pared de estuco`],
+    [`Dark fascia and white soffit along the roof edge above a gate`,`Fascia escura e soffit branco na borda do telhado acima de um portão`,`Fascia oscura y soffit blanco en el borde del techo sobre un portón`],
+    [`Illustration of a Florida home with new gutters, fascia and soffit`,`Ilustração de uma casa na Flórida com calhas, fascia e soffit novos`,`Ilustración de una casa en Florida con canaletas, fascia y soffit nuevos`],
+    [`Illustration of a leaf guard over a gutter with leaves resting on top`,`Ilustração de um protetor de calha com folhas por cima`,`Ilustración de un protector de canaletas con hojas encima`],
+    [`Sending…`,`Enviando…`,`Enviando…`],
+    [`We couldn't send your request right now. Please try again, or call us at`,`Não foi possível enviar seu pedido agora. Tente novamente ou ligue para`,`No pudimos enviar su solicitud en este momento. Intente de nuevo o llámenos al`],
+    [`Watch & Learn`,`Assista e Saiba Mais`,`Mire y Aprenda`],
+    [`Why Gutters Are So Important in Florida`,`Por que as Calhas São Tão Importantes na Flórida`,`Por qué las Canaletas Son Tan Importantes en Florida`],
+    [`Florida rain can turn a quiet afternoon into a roof-sized water event. In about a minute, this video shows how gutters collect that runoff and carry it away from your walls and foundation.`,`Uma chuva na Flórida pode despejar no telhado um volume enorme de água em poucos minutos. Em cerca de um minuto, este vídeo mostra como as calhas recolhem essa água e a levam para longe das paredes e da fundação.`,`Una lluvia en Florida puede descargar sobre el techo un gran volumen de agua en pocos minutos. En aproximadamente un minuto, este video muestra cómo las canaletas recogen esa agua y la alejan de las paredes y los cimientos.`],
+    [`Video about gutters in Florida`,`Vídeo sobre calhas na Flórida`,`Video sobre canaletas en Florida`],
+    [`Video coming soon`,`Vídeo em breve`,`Video próximamente`],
+    [`Our video about gutters in Florida will be available here shortly.`,`Nosso vídeo sobre calhas na Flórida estará disponível aqui em breve.`,`Nuestro video sobre canaletas en Florida estará disponible aquí muy pronto.`],
+    [`This video is in English. A version in your language is coming soon.`,`Este vídeo está em inglês. A versão em português chega em breve.`,`Este video está en inglés. La versión en español llegará pronto.`],
+    [`Video unavailable`,`Vídeo indisponível`,`Video no disponible`],
+    [`The video could not be loaded in this browser. Please try again later.`,`Não foi possível carregar o vídeo neste navegador. Tente novamente mais tarde.`,`No se pudo cargar el video en este navegador. Intente de nuevo más tarde.`],
+    [`Gutters`,`Calhas`,`Canaletas`],
+    [`Siding`,`Siding`,`Siding`],
+    [`Submit another request`,`Enviar outro pedido`,`Enviar otra solicitud`]
+  ];
+  const LANGS=['en','pt','es'], DICT={pt:{},es:{}};
+  const norm=s=>s.replace(/\s+/g,' ').trim();
+  ROWS.forEach(r=>{ DICT.pt[norm(r[0])]=r[1]; DICT.es[norm(r[0])]=r[2]; });
+  let lang='en';
+  const t=s=> lang==='en' ? s : (DICT[lang][norm(s)] || s);
+  const SKIP='script,style,[data-noi18n]';
+  function translateTree(root){
+    const w=document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    let n; while((n=w.nextNode())){
+      const p=n.parentElement; if(!p || p.closest(SKIP) || p.closest('[data-t]')) continue;
+      if(n.__en===undefined) n.__en=n.nodeValue;
+      const key=norm(n.__en); if(!key) continue;
+      const tr = lang==='en' ? null : DICT[lang][key];
+      if(tr){ const lead=n.__en.match(/^\s*/)[0], trail=n.__en.match(/\s*$/)[0]; n.nodeValue=lead+tr+trail; } else n.nodeValue=n.__en;
+    }
+    (root.querySelectorAll ? $$('[placeholder],[aria-label],img[alt]',root) : []).forEach(el=>{
+      if(el.closest(SKIP)) return;
+      ['placeholder','aria-label','alt'].forEach(a=>{
+        if(!el.hasAttribute(a)) return; el.__enA=el.__enA||{};
+        if(el.__enA[a]===undefined) el.__enA[a]=el.getAttribute(a);
+        el.setAttribute(a, t(el.__enA[a]));
+      });
+    });
+    $$('[data-t]',root.querySelectorAll?root:document).forEach(el=>{ if(!el.closest(SKIP)) el.textContent=t(el.dataset.t); });
+  }
+  const langHooks=[];
+
+  /* ---------- Service content (only facts supplied by CKM) ---------- */
+  const SERVICES = [
+    { id:'gutter', art:'art/gutter.svg', photo:'photos/gutter-01.jpg', alt:'Dark gutter and downspout along the side of a white home', title:'Gutter Installation', tag:'6" & 7" Gutters',
+      desc:'Gutters collect rainwater from your roof and carry it away from your home. We install 6-inch and 7-inch gutters and will help you choose the size that fits your roofline.',
+      benefits:['Directs rainwater away from your roofline, walls and foundation','Available in 6" and 7" sizes','Installed to follow the lines of your home'],
+      more:'Florida storms put gutters to work. During your free estimate, we will look at your roofline with you, talk through the 6" and 7" options and answer your questions before any work begins.' },
+    { id:'soffit', art:'art/soffit.svg', photo:'photos/soffit-02.jpg', alt:'White soffit under the roof overhang of a home', title:'Soffit Installation', tag:'Vinyl & Aluminum',
+      desc:'Soffit covers the underside of your roof overhang and gives your eaves a clean, finished look. We install both vinyl and aluminum soffit.',
+      benefits:['Choice of vinyl or aluminum soffit','Finishes the underside of your eaves','Clean, even lines along the roof overhang'],
+      more:'Not sure whether vinyl or aluminum is the better fit for your home? We will go over both options with you during your free estimate.' },
+    { id:'fascia', art:'art/fascia.svg', photo:'photos/fascia-02.jpg', alt:'Dark fascia and white soffit along the roof edge above a gate', title:'Fascia Installation', tag:'Standard & Custom',
+      desc:'Fascia is the trim board that runs along the edge of your roof, and it is where your gutters attach. We install standard fascia as well as custom fascia made to suit your home.',
+      benefits:['Standard and custom fascia options','A finished edge along your roofline','The surface your gutters mount to'],
+      more:'If your home calls for something other than a standard profile, ask us about custom fascia when you request your estimate.' },
+    { id:'siding', art:'art/siding.svg', photo:'photos/siding-01.jpg', alt:'Garage with gray vinyl siding and white trim', title:'Vinyl Siding Installation', tag:'Vinyl Siding',
+      desc:'Siding covers your exterior walls and sets the look of your entire home. We install vinyl siding for homeowners across Central Florida.',
+      benefits:['Refreshes the look of your home’s exterior','Covers and finishes exterior walls','Pairs with new soffit, fascia and gutters for a coordinated exterior'],
+      more:'Planning more than one exterior project? Let us know in your estimate request and we can talk through siding together with your roofline work.' },
+    { id:'leafguard', art:'art/leafguard.svg', photo:'art/leafguard.svg', alt:'Illustration of a leaf guard over a gutter with leaves resting on top', title:'Leaf Guard Installation', tag:'Gutter Protection',
+      desc:'Leaf guards sit over your gutters to help keep leaves out, so rainwater can keep flowing where it should.',
+      benefits:['Helps keep leaves out of your gutters','Protects your gutter system','Helps keep water moving through your gutters'],
+      more:'Leaf guards can be discussed alongside a gutter project or for gutters you already have. Mention it in your estimate request.' }
+  ];
+
+  const tpl = $('#anatomy-tpl');
+  let anaCount = 0;
+  function anatomy(highlight){
+    const svg = tpl.content.firstElementChild.cloneNode(true);
+    const t = svg.querySelector('title'); const id = 'ana-t-' + (anaCount++); t.id = id; svg.setAttribute('aria-labelledby', id);
+    setHighlight(svg, highlight);
+    return svg;
+  }
+  function setHighlight(svg, highlight){
+    svg.querySelectorAll('[data-p]').forEach(g=>{
+      const on = !highlight || g.dataset.p === highlight;
+      g.classList.toggle('hl', !!highlight && on);
+      g.classList.toggle('dim', !!highlight && !on);
+      g.querySelectorAll('.part').forEach(p=>p.classList.toggle('on', !!highlight && on));
+    });
+  }
+
+  // Overview + tabs
+  const overviewSvg = anatomy(null);
+  $('#overviewFig').appendChild(overviewSvg);
+  const tabs = $('#svcTabs');
+  const tabDefs = [{id:null,label:'All'}].concat(SERVICES.map(s=>({id:s.id,label:s.title.replace(' Installation','')})));
+  tabDefs.forEach((d,i)=>{
+    const b=document.createElement('button'); b.type='button'; b.textContent=d.label; b.setAttribute('aria-pressed', i===0?'true':'false');
+    b.addEventListener('click',()=>{ $$('button',tabs).forEach(x=>x.setAttribute('aria-pressed','false')); b.setAttribute('aria-pressed','true'); setHighlight(overviewSvg,d.id); });
+    tabs.appendChild(b);
+  });
+
+  // Service cards (illustrations)
+  const cards=$('#svcCards');
+  SERVICES.forEach(s=>{
+    cards.insertAdjacentHTML('beforeend','<a class="svc-card" href="#svc-'+s.id+'-sec"><img src="'+s.art+'" alt="" width="400" height="300" loading="lazy"><span class="sc-body"><b>'+s.title+'</b><small>'+s.tag+'</small><span class="go">Learn More <svg aria-hidden="true"><use href="#i-arrow"/></svg></span></span></a>');
+  });
+
+  // Service rows
+  const list = $('#svcList');
+  SERVICES.forEach((s,i)=>{
+    const art = document.createElement('article'); art.className='svc reveal'; art.id='svc-'+s.id+'-sec'; art.setAttribute('aria-labelledby','h-'+s.id);
+    const media = document.createElement('div'); media.className='svc-media';
+    if(s.photo){
+      // Real CKM project photo, with the roofline diagram as an inset
+      media.insertAdjacentHTML('beforeend','<img src="'+s.photo+'" alt="'+s.alt+'" width="1200" height="1600">');
+      media.insertAdjacentHTML('beforeend','<span class="svc-num" aria-hidden="true">0'+(i+1)+'</span>');
+    } else {
+      media.appendChild(anatomy(s.id));
+      media.insertAdjacentHTML('beforeend','<span class="svc-num" aria-hidden="true">0'+(i+1)+'</span><span class="photo-tag">Project photo coming soon</span>');
+    }
+    const body = document.createElement('div'); body.className='svc-body';
+    body.innerHTML =
+      '<p class="eyebrow">'+s.tag+'</p>'+
+      '<h3 id="h-'+s.id+'">'+s.title+'</h3>'+
+      '<p>'+s.desc+'</p>'+
+      '<ul class="benefits">'+s.benefits.map(b=>'<li><svg aria-hidden="true"><use href="#i-check"/></svg><span>'+b+'</span></li>').join('')+'</ul>'+
+      '<p class="svc-more" id="more-'+s.id+'" hidden>'+s.more+'</p>'+
+      '<div class="svc-ctas"><a class="btn btn-primary" href="#estimate" data-svc="'+s.id+'">Get a Free Estimate</a>'+
+      '<button class="btn btn-text" type="button" data-t="Learn More" aria-expanded="false" aria-controls="more-'+s.id+'">Learn More</button></div>';
+    art.append(media, body); list.appendChild(art);
+    const more = body.querySelector('.svc-more'), lm = body.querySelector('.btn-text');
+    lm.addEventListener('click',()=>{ const open = more.hidden; more.hidden = !open; lm.setAttribute('aria-expanded', String(open)); lm.dataset.t = open ? 'Show Less' : 'Learn More'; lm.textContent = t(lm.dataset.t); });
+  });
+
+  // Pre-select a service when coming from a service CTA
+  document.addEventListener('click',e=>{
+    const a = e.target.closest('a[data-svc]'); if(!a) return;
+    const cb = document.getElementById('svc-'+a.dataset.svc); if(cb){ cb.checked = true; $('#serviceErr').hidden = true; }
+  });
+
+  /* ---------- Header ---------- */
+  const header = $('.site-header');
+  const onScroll = ()=> header.classList.toggle('scrolled', window.scrollY > 8);
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+  const menuBtn = $('#menuBtn'), mnav = $('#mobileNav'), mIcon = $('#menuIcon');
+  function setMenu(open){ mnav.hidden = !open; menuBtn.setAttribute('aria-expanded', String(open)); menuBtn.setAttribute('aria-label', t(open?'Close menu':'Open menu')); mIcon.setAttribute('d', open ? 'M6 6l12 12M18 6 6 18' : 'M3 6h18M3 12h18M3 18h18'); }
+  langHooks.push(()=>menuBtn.setAttribute('aria-label', t(mnav.hidden?'Open menu':'Close menu')));
+  menuBtn.addEventListener('click',()=> setMenu(mnav.hidden));
+  $$('a',mnav).forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape' && !mnav.hidden) { setMenu(false); menuBtn.focus(); } });
+
+  /* ---------- Gallery ---------- */
+  const CATS = [['gutter','Gutter Projects'],['soffit','Soffit Projects'],['fascia','Fascia Projects'],['siding','Vinyl Siding Projects'],['leafguard','Leaf Guard Projects']];
+  // Real CKM project photos. To add more, append {cat, src, alt}. Categories without photos show a labeled placeholder.
+  const PHOTOS = [
+    {cat:'gutter', src:'photos/hero-gutters.jpg', alt:'Single-story home with dark gutters and downspouts along the roofline', wide:true},
+    {cat:'gutter', src:'photos/gutter-02.jpg', alt:'White gutters and downspout on a two-story home with palm trees'},
+    {cat:'soffit', src:'photos/soffit-01.jpg', alt:'Soffit and siding under a roof overhang, seen from below'},
+    {cat:'siding', src:'photos/siding-01.jpg', alt:'Garage with gray vinyl siding and white trim'},
+    {cat:'gutter', src:'photos/gutter-04.jpg', alt:'White gutter and downspout along a home with green shutters'},
+    {cat:'fascia', src:'photos/fascia-01.jpg', alt:'Soffit and fascia along the eave of a stucco home'},
+    {cat:'gutter', src:'photos/gutter-01.jpg', alt:'Dark gutter and downspout along the side of a white home'},
+    {cat:'soffit', src:'photos/soffit-02.jpg', alt:'White soffit under the roof overhang of a home'},
+    {cat:'gutter', src:'photos/gutter-03.jpg', alt:'White gutter and downspout on a stucco wall'},
+    {cat:'fascia', src:'photos/fascia-02.jpg', alt:'Dark fascia and white soffit along the roof edge above a gate'},
+    {cat:'leafguard'}
+  ];
+  const LABEL = Object.fromEntries(CATS);
+  const counter = {};
+  const order = PHOTOS.map(p=>{ counter[p.cat]=(counter[p.cat]||0)+1; return Object.assign({label:LABEL[p.cat], n:counter[p.cat], ratio:p.ratio||'3/4'}, p); });
+  const mas = $('#masonry'), filters = $('#filters');
+  let current = 'all', visible = [];
+  function short(it){ return it.label.replace(' Projects',''); }
+  function phHTML(it){
+    if(it.src) return '<span class="shot"><img src="'+it.src+'" alt="'+t(it.alt)+'" loading="lazy"><span class="cat">'+t(short(it))+'</span></span>';
+    const title = t(short(it)) + ' · ' + t('Project') + ' ' + String(it.n).padStart(2,'0');
+    return '<div class="ph"><span class="cat">'+t(short(it))+'</span><div class="ph-in"><svg aria-hidden="true"><use href="#i-image"/></svg><b>'+title+'</b><span>'+t('Photo placeholder · replace with real project photo')+'</span></div></div>';
+  }
+  function renderGallery(){
+    visible = order.filter(it=> current==='all' || it.cat===current);
+    mas.innerHTML = '';
+    visible.forEach((it,i)=>{
+      const b = document.createElement('button'); b.type='button'; b.className='tile'+(it.wide?' wide':'');
+      b.setAttribute('aria-label', it.src ? t('Open')+': '+t(it.alt) : t('Open')+' '+t(short(it))+' '+t('Project')+' '+it.n+' ('+t('placeholder')+')');
+      b.innerHTML = phHTML(it); b.addEventListener('click',()=>openLB(i)); mas.appendChild(b);
+    });
+  }
+  langHooks.push(()=>{ renderGallery(); if(!lb.hidden) showLB(); });
+  [['all','All Projects']].concat(CATS).forEach(([c,label],i)=>{
+    const b=document.createElement('button'); b.type='button'; b.textContent=label; b.setAttribute('aria-pressed', i===0?'true':'false');
+    b.addEventListener('click',()=>{ current=c; $$('button',filters).forEach(x=>x.setAttribute('aria-pressed','false')); b.setAttribute('aria-pressed','true'); renderGallery(); });
+    filters.appendChild(b);
+  });
+  renderGallery();
+
+  const lb=$('#lightbox'), lbStage=$('#lbStage'), lbCap=$('#lbCaption'); let lbIdx=0, lastFocus=null;
+  function showLB(){ const it=visible[lbIdx]; lbStage.innerHTML = it.src ? '<img src="'+it.src+'" alt="'+t(it.alt)+'" style="width:100%;height:100%;object-fit:contain">' : phHTML(Object.assign({},it,{ratio:'auto'})).replace('aspect-ratio:auto','height:100%'); lbCap.textContent = (it.src ? t(it.alt) : t(short(it)) + ' · ' + t('Project') + ' ' + it.n) + '  ·  ' + (lbIdx+1) + ' ' + t('of') + ' ' + visible.length; }
+  function openLB(i){ lbIdx=i; lastFocus=document.activeElement; showLB(); lb.hidden=false; document.body.style.overflow='hidden'; $('#lbClose').focus(); }
+  function closeLB(){ lb.hidden=true; document.body.style.overflow=''; if(lastFocus) lastFocus.focus(); }
+  $('#lbClose').addEventListener('click',closeLB);
+  $('#lbPrev').addEventListener('click',()=>{ lbIdx=(lbIdx-1+visible.length)%visible.length; showLB(); });
+  $('#lbNext').addEventListener('click',()=>{ lbIdx=(lbIdx+1)%visible.length; showLB(); });
+  lb.addEventListener('click',e=>{ if(e.target===lb) closeLB(); });
+  document.addEventListener('keydown',e=>{ if(lb.hidden) return; if(e.key==='Escape') closeLB(); if(e.key==='ArrowLeft') $('#lbPrev').click(); if(e.key==='ArrowRight') $('#lbNext').click();
+    if(e.key==='Tab'){ const f=$$('button',lb); const first=f[0], last=f[f.length-1]; if(e.shiftKey && document.activeElement===first){ e.preventDefault(); last.focus(); } else if(!e.shiftKey && document.activeElement===last){ e.preventDefault(); first.focus(); } } });
+
+  /* ---------- Copy buttons ---------- */
+  $$('.copy-btn').forEach(b=>b.addEventListener('click',()=>{
+    const v=b.dataset.copy; const done=()=>{ b.dataset.t='Copied'; b.textContent=t('Copied'); setTimeout(()=>{ b.dataset.t='Copy'; b.textContent=t('Copy'); },1600); };
+    try{ navigator.clipboard.writeText(v).then(done).catch(()=>fallbackSelect(b)); }catch(_){ fallbackSelect(b); }
+  }));
+  function fallbackSelect(b){ const el=b.previousElementSibling; const r=document.createRange(); r.selectNodeContents(el); const s=getSelection(); s.removeAllRanges(); s.addRange(r); b.dataset.t='Selected'; b.textContent=t('Selected'); setTimeout(()=>{ b.dataset.t='Copy'; b.textContent=t('Copy'); },1600); }
+
+  /* ---------- Form ---------- */
+  const form=$('#estimateForm'), success=$('#success');
+  const today=new Date(); const iso=new Date(today.getTime()-today.getTimezoneOffset()*60000).toISOString().slice(0,10);
+  $('#prefDay').min = iso;
+  const phoneIn=$('#phone');
+  phoneIn.addEventListener('input',()=>{ let d=phoneIn.value.replace(/\D/g,''); if(d.length===11 && d[0]==='1') d=d.slice(1); d=d.slice(0,10);
+    if(d.length>6) phoneIn.value='('+d.slice(0,3)+') '+d.slice(3,6)+'-'+d.slice(6); else if(d.length>3) phoneIn.value='('+d.slice(0,3)+') '+d.slice(3); else phoneIn.value=d; });
+  $('#state').addEventListener('input',e=>e.target.value=e.target.value.toUpperCase().replace(/[^A-Z]/g,''));
+  $('#zip').addEventListener('input',e=>e.target.value=e.target.value.replace(/[^\d-]/g,''));
+
+  const MSG = {
+    firstName:'Enter your first name.', lastName:'Enter your last name.',
+    email:'Enter a valid email address, like name@example.com.', phone:'Enter a 10-digit phone number.',
+    address:'Enter the street address of the project.', city:'Enter the city.', state:'Enter the 2-letter state, like FL.', zip:'Enter a 5-digit ZIP code.'
+  };
+  function check(input){
+    const f=input.closest('.field'); let ok=true, v=input.value.trim();
+    if(input.required && !v) ok=false;
+    if(ok && input.id==='email') ok=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+    if(ok && input.id==='phone') ok=v.replace(/\D/g,'').length===10;
+    if(ok && input.id==='state') ok=/^[A-Z]{2}$/.test(v);
+    if(ok && input.id==='zip') ok=/^\d{5}(-\d{4})?$/.test(v);
+    let m=f.querySelector('.err-msg');
+    if(!ok){ if(!m){ m=document.createElement('p'); m.className='err-msg'; m.id=input.id+'-err'; f.appendChild(m); } m.dataset.t=MSG[input.id]||'Please complete this field.'; m.textContent=t(m.dataset.t); input.setAttribute('aria-invalid','true'); input.setAttribute('aria-describedby',m.id); f.classList.add('invalid'); }
+    else { if(m) m.remove(); input.removeAttribute('aria-invalid'); input.removeAttribute('aria-describedby'); f.classList.remove('invalid'); }
+    return ok;
+  }
+  $$('input[required]',form).forEach(i=>{ i.addEventListener('blur',()=>{ if(i.value) check(i); }); i.addEventListener('input',()=>{ if(i.closest('.field').classList.contains('invalid')) check(i); }); });
+  $$('input[name=service]').forEach(c=>c.addEventListener('change',()=>{ if($$('input[name=service]:checked').length) $('#serviceErr').hidden=true; }));
+
+  // Photos
+  const photos=$('#photos'), thumbs=$('#thumbs'), drop=$('#drop'); let files=[];
+  function renderThumbs(){ thumbs.innerHTML=''; files.forEach((f,i)=>{ const fig=document.createElement('figure'); const img=document.createElement('img'); img.alt='Selected photo '+(i+1); const r=new FileReader(); r.onload=()=>img.src=r.result; r.readAsDataURL(f);
+    const x=document.createElement('button'); x.type='button'; x.textContent='×'; x.setAttribute('aria-label','Remove photo '+(i+1)); x.addEventListener('click',()=>{ files.splice(i,1); renderThumbs(); });
+    fig.append(img,x); thumbs.appendChild(fig); }); }
+  photos.addEventListener('change',()=>{ files=files.concat(Array.from(photos.files).filter(f=>f.type.startsWith('image/'))).slice(0,10); photos.value=''; renderThumbs(); });
+  ['dragenter','dragover'].forEach(ev=>drop.addEventListener(ev,e=>{ e.preventDefault(); drop.classList.add('over'); }));
+  ['dragleave','drop'].forEach(ev=>drop.addEventListener(ev,()=>drop.classList.remove('over')));
+  drop.addEventListener('drop',e=>{ e.preventDefault(); files=files.concat(Array.from(e.dataTransfer.files).filter(f=>f.type.startsWith('image/'))).slice(0,10); renderThumbs(); });
+
+  const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  let lastSubmit=null;
+  function renderSuccess(){
+    const {d, svcs}=lastSubmit;
+    const loc = lang==='pt' ? 'pt-BR' : lang==='es' ? 'es-US' : 'en-US';
+    const dayTxt = d.prefDay ? new Date(d.prefDay+'T12:00:00').toLocaleDateString(loc,{weekday:'long',month:'long',day:'numeric'}) : t('No preference');
+    /* INTEGRATION POINT: send this data to the business before launch
+       (e.g. a form service such as Formspree/Netlify Forms, or a CRM / email endpoint). */
+    success.innerHTML =
+      '<div class="tick"><svg aria-hidden="true"><use href="#i-check"/></svg></div>'+
+      '<h3>'+t('Thank You')+', '+esc(d.firstName)+'</h3>'+
+      '<p>'+t("We'll review your request and contact you to discuss your project.")+' '+t('For anything urgent, call us at')+' <a href="tel:+13212400711"><b>+1 (321) 240-0711</b></a> ('+t('Monday \u2013 Friday, 9:00 AM \u2013 5:00 PM')+').</p>'+
+      '<dl><dt>'+t('Name')+'</dt><dd>'+esc(d.firstName+' '+d.lastName)+'</dd><dt>'+t('Service')+'</dt><dd>'+esc(svcs.map(t).join(', '))+'</dd><dt>'+t('Address')+'</dt><dd>'+esc(d.address+', '+d.city+', '+d.state+' '+d.zip)+'</dd><dt>'+t('Preferred visit')+'</dt><dd>'+esc(dayTxt+(d.prefTime?' \u00b7 '+d.prefTime:''))+'</dd><dt>'+t('Photos')+'</dt><dd>'+files.length+'</dd></dl>'+
+      (lastSubmit.demo ? '<p class="dev-note">'+t('Preview build: this form is not yet connected to email, so requests are not delivered. Connect it before the site goes live.')+'</p>' : '')+
+      '<button type="button" class="btn btn-text" id="again">'+t('Submit another request')+'</button>';
+    $('#again').addEventListener('click',()=>{ form.reset(); $('#state').value='FL'; files=[]; renderThumbs(); lastSubmit=null; success.hidden=true; form.hidden=false; $('#firstName').focus(); });
+  }
+  langHooks.push(()=>{ if(lastSubmit && !success.hidden) renderSuccess(); });
+  // Shrink photos in the browser so uploads stay small and fast on mobile data.
+  function shrink(file){
+    return new Promise(resolve=>{
+      if(!/^image\/(jpeg|png|webp)$/i.test(file.type)) return resolve(file);
+      const url=URL.createObjectURL(file), img=new Image();
+      img.onload=()=>{
+        const max=1600, sc=Math.min(1, max/Math.max(img.width,img.height));
+        const c=document.createElement('canvas'); c.width=Math.round(img.width*sc); c.height=Math.round(img.height*sc);
+        c.getContext('2d').drawImage(img,0,0,c.width,c.height); URL.revokeObjectURL(url);
+        c.toBlob(b=> resolve(b && b.size < file.size ? new File([b], file.name.replace(/\.\w+$/,'')+'.jpg', {type:'image/jpeg'}) : file), 'image/jpeg', .8);
+      };
+      img.onerror=()=>{ URL.revokeObjectURL(url); resolve(file); };
+      img.src=url;
+    });
+  }
+  const formErr=$('#formError'), submitBtn=$('#submitBtn');
+  function showFormError(){
+    formErr.innerHTML = esc(t("We couldn't send your request right now. Please try again, or call us at"))+' <a href="tel:+13212400711">+1 (321) 240-0711</a>.';
+    formErr.hidden=false; formErr.scrollIntoView({behavior:'smooth',block:'center'});
+  }
+  function setBusy(b){ submitBtn.disabled=b; submitBtn.dataset.t = b ? 'Sending…' : 'Request My Free Estimate'; submitBtn.textContent=t(submitBtn.dataset.t); }
+
+  form.addEventListener('submit',async e=>{
+    e.preventDefault();
+    formErr.hidden=true;
+    let firstBad=null;
+    $$('input[required]',form).forEach(i=>{ if(!check(i) && !firstBad) firstBad=i; });
+    const svcs=$$('input[name=service]:checked').map(c=>c.value);
+    if(!svcs.length){ $('#serviceErr').hidden=false; if(!firstBad) firstBad=$('#svc-gutter'); }
+    if(firstBad){ firstBad.focus(); return; }
+    const d=Object.fromEntries(new FormData(form).entries());
+    const endpoint=form.dataset.endpoint;
+
+    if(endpoint){
+      setBusy(true);
+      try{
+        const fd=new FormData();
+        ['firstName','lastName','email','phone','address','city','state','zip','message','prefDay','prefTime','company_website'].forEach(k=>fd.append(k, d[k]||''));
+        svcs.forEach(v=>fd.append('service',v));
+        fd.append('lang', lang);
+        const ready=await Promise.all(files.map(shrink));
+        ready.forEach(f=>fd.append('photos', f, f.name));
+        const r=await fetch(endpoint,{method:'POST', body:fd});
+        const out=await r.json().catch(()=>({}));
+        if(!r.ok || !out.ok){
+          if(r.status===422 && Array.isArray(out.fields)){
+            const bad=out.fields.map(id=>document.getElementById(id)).filter(Boolean);
+            bad.forEach(check); if(out.fields.includes('service')) $('#serviceErr').hidden=false;
+            if(bad[0]){ bad[0].focus(); return; }
+          }
+          showFormError(); return;
+        }
+      }catch(_){ showFormError(); return; }
+      finally{ setBusy(false); }
+    }
+
+    lastSubmit={d, svcs, demo:!endpoint};
+    renderSuccess();
+    form.hidden=true; success.hidden=false; success.focus();
+    $('#formCard').scrollIntoView({behavior:'smooth',block:'start'});
+  });
+
+  /* ---------- Video (one file per language) ----------
+     Put each file in /video and fill in its path. A language with no file
+     shows the English video with a short note until its version arrives. */
+  const VIDEOS = {
+    en: 'video/why-gutters-florida-en.mp4',
+    pt: '',   // Portuguese version (coming later)
+    es: ''    // Spanish version (coming later)
+  };
+  const vid=$('#promoVideo'), vEmpty=$('#videoEmpty'), vNote=$('#videoNote');
+  let vSrc=null, vTriedBlob=false, vBlobUrl=null;
+  // Some hosts don't stream video in byte ranges, which Safari requires.
+  // If the direct file fails, download it once and play it from memory.
+  vid.addEventListener('error',()=>{
+    if(!vSrc || vTriedBlob) return showVideoError();
+    vTriedBlob=true;
+    const want=vSrc;
+    fetch(want).then(r=>{ if(!r.ok) throw 0; return r.blob(); }).then(b=>{
+      if(want!==vSrc) return;
+      if(vBlobUrl) URL.revokeObjectURL(vBlobUrl);
+      vBlobUrl=URL.createObjectURL(b.type ? b : new Blob([b],{type:'video/mp4'}));
+      vid.src=vBlobUrl; vid.load();
+    }).catch(showVideoError);
+  });
+  function showVideoError(){
+    vEmpty.hidden=false;
+    $('#videoEmptyTitle').textContent=t('Video unavailable');
+    $('#videoEmptyText').textContent=t('The video could not be loaded in this browser. Please try again later.');
+  }
+  function loadVideo(){
+    const own=VIDEOS[lang], src=own || VIDEOS.en;
+    if(src !== vSrc){
+      vSrc=src; vTriedBlob=false;
+      vid.pause();
+      if(src){ vid.src=src; vid.load(); } else { vid.removeAttribute('src'); vid.load(); }
+    }
+    vEmpty.hidden = !!src;
+    vid.controls = !!src;
+    $('#videoEmptyTitle').textContent=t('Video coming soon');
+    $('#videoEmptyText').textContent=t('Our video about gutters in Florida will be available here shortly.');
+    const fallback = src && !own && lang!=='en';
+    vNote.hidden = !fallback;
+    vNote.textContent = fallback ? t('This video is in English. A version in your language is coming soon.') : '';
+    vid.setAttribute('aria-label', t('Video about gutters in Florida'));
+  }
+  langHooks.push(loadVideo);
+
+  /* ---------- Language switch ---------- */
+  function setLang(l, save){
+    lang = LANGS.includes(l) ? l : 'en';
+    document.documentElement.lang = lang==='pt' ? 'pt-BR' : lang==='es' ? 'es' : 'en';
+    translateTree(document.body);
+    langHooks.forEach(fn=>fn());
+    $$('#langSwitch button').forEach(b=>b.setAttribute('aria-pressed', String(b.dataset.lang===lang)));
+    if(save){ try{ localStorage.setItem('ckm-lang', lang); }catch(_){} }
+  }
+  $$('#langSwitch button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang, true)));
+  let startLang='en';
+  const urlLang = (new URLSearchParams(location.search).get('lang') || location.hash.slice(1) || '').toLowerCase();
+  try{ const saved=localStorage.getItem('ckm-lang'); if(LANGS.includes(urlLang)) startLang=urlLang; else if(saved) startLang=saved; else { const nl=(navigator.language||'').toLowerCase(); if(nl.startsWith('pt')) startLang='pt'; else if(nl.startsWith('es')) startLang='es'; } }catch(_){ }
+  setLang(startLang, false);
+
+  /* ---------- Reveal (content is visible at rest; this only adds a small lift) ---------- */
+  if('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+    const io=new IntersectionObserver(es=>es.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } }),{rootMargin:'0px 0px -8% 0px'});
+    $$('.reveal').forEach(el=>{ const r=el.getBoundingClientRect(); if(r.top>innerHeight) io.observe(el); });
+  }
+  $('#yr').textContent=new Date().getFullYear();
+})();
+</script>
+
+</body>
+</html>
